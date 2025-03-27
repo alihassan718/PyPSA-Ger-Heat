@@ -1,0 +1,32 @@
+# === Ignore output folders ===
+Results/
+outputs/
+output/
+plots/
+test/
+images/
+figures/
+
+# === Python cache ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# === Temporary and backup files ===
+*.tmp
+*.log
+*.bak
+*.swp
+*.~*
+*~
+
+# === Virtual environments ===
+.venv/
+env/
+venv/
+.env
+
+# === Editor/IDE configs ===
+.vscode/
+.idea/
