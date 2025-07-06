@@ -18,6 +18,7 @@ import numpy as np
 import os
 import yaml
 
+
 def pie_exp(data):
     df = pd.DataFrame({'carrier': ['gas', 'CCGT', 'OCGT', 'biomass',
                                    'coal', 'lignite', 'nuclear', 'offwind-ac',
@@ -439,4 +440,248 @@ def Country_Map(n,year,config,clusters):
     ax.axis('off')
     directory = 'Results/'+str(clusters)
     plt.savefig(f'{directory}/Installation Map {year}', bbox_inches='tight')
+    plt.show()
+
+########################################################################## Heating sector
+
+import os
+import matplotlib.pyplot as plt
+
+# def pie_chart_heat_capacity(n, year, clusters, colors):
+#     """
+#     Plot heating capacity shares based on link names (not carrier, which is uniform 'heat').
+
+#     Parameters
+#     ----------
+#     n : pypsa.Network
+#         The PyPSA network object.
+#     year : int
+#         Year used in the title and filename.
+#     clusters : int or str
+#         Identifier for output directory.
+#     colors : dict
+#         Mapping of technology names to color codes.
+#     """
+#     # Identify links connected to heat buses
+#     heating_links = []
+
+#     for link_name, row in n.links.iterrows():
+#         for b in ["bus0", "bus1", "bus2"]:
+#             if "heat" in str(row.get(b, "")):
+#                 heating_links.append(link_name)
+#                 break  # No need to check other buses for this link
+
+
+#     heating_links_df = n.links.loc[heating_links]
+
+#     # Extract technology from link names (assuming tech is last word)
+#     heating_links_df["tech"] = heating_links_df.index.str.split().str[-1].str.replace("_", " ")
+
+#     # Aggregate capacities by tech
+#     p_by_tech = heating_links_df.groupby("tech")["p_nom"].sum()
+
+#     # Filter out small values (<1%)
+#     p_by_tech = p_by_tech[p_by_tech / p_by_tech.sum() > 0.01]
+
+#     # Assign colors
+#     plot_colors = [colors.get(tech, 'green') for tech in p_by_tech.index]
+
+#     # Plot pie chart
+#     fig, ax = plt.subplots(figsize=(8, 6))
+#     wedges, texts, autotexts = ax.pie(p_by_tech, colors=plot_colors, autopct='%1.1f%%',
+#                                       shadow=True, startangle=140)
+
+#     ax.legend(wedges, p_by_tech.index, loc="best")
+#     ax.set_title(f"Heating Capacity Shares {year}", fontsize=18)
+
+#     # Save figure
+#     directory = f"Results/{clusters}"
+#     os.makedirs(directory, exist_ok=True)
+#     fig.savefig(f"{directory}/Heat_Capacity_Shares_{year}.png", dpi=300, bbox_inches='tight')
+#     plt.show()
+
+def pie_chart_heat_capacity(n, year, clusters, colors):
+    """
+    Plot heating capacity shares based on link names (not carrier, which is uniform 'heat').
+
+    Only includes actual heat-supplying links with p_nom > 0 and excludes temporary or transitional ones.
+
+    Parameters
+    ----------
+    n : pypsa.Network
+        The PyPSA network object.
+    year : int
+        Year used in the title and filename.
+    clusters : int or str
+        Identifier for output directory.
+    colors : dict
+        Mapping of technology names to color codes.
+    """
+
+    heating_links = []
+
+    for name, row in n.links.iterrows():
+        is_heat_bus = "heat" in str(row.get("bus1", "")) or "heat" in str(row.get("bus2", ""))
+        is_valid = row.p_nom > 0
+        is_not_transitional_biomass = not ("biomass_burner" in name and "fixed" not in name)
+
+        if is_heat_bus and is_valid and is_not_transitional_biomass:
+            heating_links.append(name)
+
+    heating_links_df = n.links.loc[heating_links].copy()
+
+    # Extract technology from link names (assuming tech is last word)
+    heating_links_df["tech"] = heating_links_df.index.str.split().str[-1].str.replace("_", " ")
+
+    # Aggregate installed capacity by tech
+    p_by_tech = heating_links_df.groupby("tech")["p_nom"].sum()
+
+    # Filter out small shares (<1%)
+    p_by_tech = p_by_tech[p_by_tech / p_by_tech.sum() > 0.01]
+
+    # Assign colors
+    plot_colors = [colors.get(tech, 'green') for tech in p_by_tech.index]
+
+    # Plot pie chart
+    fig, ax = plt.subplots(figsize=(8, 6))
+    wedges, texts, autotexts = ax.pie(
+        p_by_tech, colors=plot_colors, autopct='%1.1f%%', shadow=True, startangle=140
+    )
+
+    ax.legend(wedges, p_by_tech.index, loc="upper right", bbox_to_anchor=(1.05, 1), prop={'size': 6})
+    ax.set_title(f"Heating Capacity Shares {year}", fontsize=18)
+
+    # Save and show plot
+    directory = f"Results/{clusters}"
+    os.makedirs(directory, exist_ok=True)
+    fig.savefig(f"{directory}/Heat_Capacity_Shares_{year}.png", dpi=300, bbox_inches='tight')
+    plt.show()
+
+    
+
+    
+    
+def plot_heating_supply_shares(n, year, clusters, colors):
+    """
+    Visualizes the share of total heat supplied by each heating technology in a given year.
+    Uses link names to extract technology labels instead of relying on the carrier field.
+
+    Parameters
+    ----------
+    n : pypsa.Network
+        The PyPSA network object.
+    year : int
+        Year for title and file name.
+    clusters : int or str
+        Clustering identifier for output directory.
+    colors : dict
+        Mapping of technologies to color codes.
+    """
+    heating_links = []
+
+    for link_name, row in n.links.iterrows():
+        for b in ["bus0", "bus1", "bus2"]:
+            if "heat" in str(row.get(b, "")):
+                heating_links.append(link_name)
+                break
+
+    # Aggregate heat output by technology name (parsed from link name)
+    p_by_tech = {}
+
+    for link in heating_links:
+        # Extract tech name (assumed to be the last word)
+        tech = link.split()[-1].replace("_", " ")
+
+        if "bus1" in n.links.columns and "heat" in n.links.at[link, "bus1"]:
+            power = -n.links_t.p1[link].sum()
+        elif "bus2" in n.links.columns and "heat" in n.links.at[link, "bus2"]:
+            power = -n.links_t.p2[link].sum()
+        else:
+            continue
+        power *= 8760 / len(n.snapshots)
+
+        p_by_tech[tech] = p_by_tech.get(tech, 0) + power
+
+    p_by_tech = pd.Series(p_by_tech)
+    p_by_tech = p_by_tech[p_by_tech / p_by_tech.sum() > 0.01]
+
+    plot_colors = [colors.get(tech, "green") for tech in p_by_tech.index]
+
+    # Plot pie chart
+    fig, ax = plt.subplots(figsize=(8, 6))
+    wedges, texts, autotexts = ax.pie(
+        p_by_tech,
+        colors=plot_colors,
+        autopct='%1.1f%%',
+        shadow=True,
+        startangle=140
+    )
+
+    ax.legend(wedges, p_by_tech.index, loc="upper right", bbox_to_anchor=(1.05, 1), prop={'size': 8})
+    ax.set_title(f"Heating Supply Share {year}", fontsize=18)
+    fig.tight_layout()
+
+    # Save plot
+    directory = f"Results/{clusters}"
+    os.makedirs(directory, exist_ok=True)
+    fig.savefig(f"{directory}/Heat_Supply_Shares_{year}.png", dpi=300, bbox_inches='tight')
+    plt.show()
+
+
+
+def plot_fossil_vs_electric_heating(n, year, clusters):
+    """
+    Plots the share of heat supplied from fossil vs electric heating technologies.
+
+    Parameters
+    ----------
+    n : pypsa.Network
+        The PyPSA network object.
+    year : int
+        Year for title and file saving.
+    clusters : int or str
+        Identifier for results folder.
+    """
+    # Define fossil and electric technologies
+    fossil_techs = ["oil", "gas", "coal", "biomass"]
+    electric_techs = ["AC"]  # Heat pumps modeled as AC links
+
+    fossil_energy = 0
+    electric_energy = 0
+
+    for link in n.links.index:
+        bus1 = n.links.at[link, "bus1"]
+        carrier = n.links.at[link, "carrier"]
+        if isinstance(bus1, str) and "heat" in bus1:
+            energy = -n.links_t.p1[link].sum()
+            if carrier in fossil_techs:
+                fossil_energy += energy
+            elif carrier in electric_techs:
+                electric_energy += energy
+
+    # Compose data
+    data = {
+        "Fossil Heating": fossil_energy,
+        "Electric Heating": electric_energy
+    }
+
+    # Filter very small contributions
+    data = {k: v for k, v in data.items() if v > 0.01 * (fossil_energy + electric_energy)}
+
+    # Plot pie chart
+    fig, ax = plt.subplots(figsize=(6, 6))
+    ax.pie(
+        data.values(),
+        labels=data.keys(),
+        autopct='%1.1f%%',
+        startangle=140,
+        colors=["#c0392b", "#3498db"],
+        shadow=True
+    )
+    ax.set_title(f"Fossil vs Electric Heating Share {year}", fontsize=16)
+
+    # Save figure
+    output_dir = f"Results/{clusters}"
+    os.makedirs(output_dir, exist_ok=True)
+    plt.savefig(f"{output_dir}/Fossil_vs_Electric_Heating_{year}.png", dpi=300, bbox_inches='tight')
     plt.show()

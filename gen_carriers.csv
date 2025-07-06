@@ -1,0 +1,60 @@
+Generator,carrier
+DE0 2 biomass,False
+DE0 2 coal,False
+DE0 2 oil,False
+DE0 2 onwind,False
+DE0 2 ror,False
+DE0 2 solar,False
+DE0 9 biomass,False
+DE0 9 coal,False
+DE0 9 offwind-ac,False
+DE0 9 offwind-dc,False
+DE0 9 onwind,False
+DE0 9 ror,False
+DE0 9 solar,False
+DE0 A biomass,False
+DE0 A coal,False
+DE0 A lignite,False
+DE0 A oil,False
+DE0 A onwind,False
+DE0 A ror,False
+DE0 A solar,False
+DE0 E biomass,False
+DE0 E coal,False
+DE0 E lignite,False
+DE0 E oil,False
+DE0 E onwind,False
+DE0 E ror,False
+DE0 E solar,False
+DE0 9 lignite,False
+DE0 9 oil,False
+DE0 2 Gas import,False
+DE0 9 Gas import,False
+DE0 A Gas import,False
+DE0 E Gas import,False
+Fixed DE0 2 onwind,False
+Fixed DE0 2 solar,False
+Fixed DE0 9 offwind-ac,False
+Fixed DE0 9 offwind-dc,False
+Fixed DE0 9 onwind,False
+Fixed DE0 9 solar,False
+Fixed DE0 A onwind,False
+Fixed DE0 A solar,False
+Fixed DE0 E onwind,False
+Fixed DE0 E solar,False
+Fixed DE0 2 biomass,False
+Fixed DE0 2 ror,False
+Fixed DE0 9 biomass,False
+Fixed DE0 9 ror,False
+Fixed DE0 A biomass,False
+Fixed DE0 A ror,False
+Fixed DE0 E biomass,False
+Fixed DE0 E ror,False
+DE0 2 H2 import,True
+DE0 9 H2 import,True
+DE0 A H2 import,True
+DE0 E H2 import,True
+DE0 2 load,False
+DE0 9 load,False
+DE0 A load,False
+DE0 E load,False

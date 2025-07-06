@@ -1,0 +1,761 @@
+NUTS_ID,CompanyName,Subsector,Emissions_ETS_2014,Production,Fuel_Demand,Cluster
+DE11D,Papierfabrik Palm GmbH & Co.KG,Paper and printing,127433.0,490245.26,748.98,DE2
+DE11C,Schwenk Zement KG,Cement,539698.0,783338.6,761.57,DE2
+DE27D,Märker Zement GmbH,Cement,160329.0,,,DE2
+DE122,Stora Enso Maxau GmbH,Paper and printing,156073.0,600425.7,917.31,DE2
+DE122,Werk 1 MIRO-Mineralölraffinerie Oberrhein GmbH & Co.KG,Refineries,2782816.0,,,DE2
+DE126,SCA Hygiene Products GmbH Consumer Products,Paper and printing,203327.0,782215.74,1195.05,DE2
+DE128,HeidelbergCement AG Zementwerk Leimen,Cement,417889.0,606540.29,589.69,DE2
+DE123,Lafarge Zement Wössingen GmbH,Cement,483269.0,701435.36,681.95,DE2
+DE139,HeidelbergCement AG,Cement,175359.0,,,DE2
+DE134,Papierfabrik August Koehler SE,Paper and printing,5223.0,20093.31,30.69,DE2
+DE145,Schwenk Zement KG,Cement,495895.0,719761.22,699.76,DE2
+DE145,HeidelbergCement AG,Cement,803828.0,1166707.12,1134.29,DE2
+DE148,Arctic Paper Mochenwangen GmbH,Paper and printing,98503.0,378949.16,578.95,DE2
+DE148,Verallia Saint-Gobain Oberland AG Glasfabrik,Glass,89292.0,150236.12,241.21,DE2
+DE143,Holcim (Süddeutschland) GmbH,Cement,700686.0,1016687.21,988.44,DE2
+DEC01,Saarstahl AG,Iron and steel,366062.0,855176.89,884.91,DEA
+DEC04,AG der Dillinger Hüttenwerke,Iron and steel,746699.0,1961614.92,1864.77,DEA
+DEC04,ZKS Zentralkokerei Saar GmbH,Iron and steel,975238.0,5557455.59,,DEA
+DEC04,ROGESA Roheisengesellschaft Saar mbH,Iron and steel,4223992.0,9867892.24,22794.01,DEA
+DEF05,Sasol Germany GmbH,Chemical industry,149825.0,,,DE9
+DEF05,Bayer MaterialScience AG,Chemical industry,116927.0,,,DE9
+DEF05,Klesch Group LTD und Klesch Petroleum Holdings LTD,Refineries,955087.0,,,DE9
+DEF0E,YARA Brunsbüttel GmbH,Chemical industry,1456793.0,,,DE9
+DEF0E,Holcim (Deutschland) AG,Cement,1170680.0,1350000.0,2062.5,DE9
+DE600,Holborn Europa Raffinerie GmbH,Refineries,736710.0,,,DE9
+DE600,"TRIMET ALUMINIUM SE, Niederlassung Hamburg",Non-ferrous metals,261080.0,,,DE9
+DE600,ArcelorMittal Duisburg GmbH,Iron and steel,419519.0,1146768.93,710.75,DE9
+DE912,Salzgitter Flachstahl GmbH Abt. Umweltschutz / 08 TUI,Iron and steel,4465254.0,11555816.43,20216.08,DE9
+DE916,FELS-WERKE GmbH,Cement,338262.0,,,DE9
+DE91A,Peiner Träger GmbH,Iron and steel,172462.0,402897.64,65.36,DE9
+DE949,Nordland Papier GmbH,Paper and printing,258470.0,994355.41,1519.15,DE9
+DE929,Holcim (Deutschland) AG Werk Höver,Cement,624695.0,906706.54,881.52,DE9
+DE927,Smurfit Kappa Hoya Papier und Karton GmbH,Paper and printing,126310.0,485924.99,742.38,DE9
+DE928,Ardagh Glass GmbH,Glass,62991.0,105984.0,170.16,DE9
+DE925,Sappi Alfeld GmbH,Paper and printing,22729.0,87440.33,133.58,DE9
+DE94A,Papier- u. Kartonfabrik Varel GmbH & Co. KG,Paper and printing,290564.0,1117823.67,1707.78,DE9
+DE945,Wilhelmshavener Raffineriegesellschaft mbH WRG,Refineries,2234.0,,,DE9
+DE949,BP Europa SE BP Lingen,Refineries,1063092.0,,,DE9
+DE94E,Georgsmarienhütte Holding GmbH,Iron and steel,143456.0,335135.18,29.64,DE9
+DE944,Schoeller Technocell GmbH & Co. KG,Paper and printing,157.0,,0.92,DE9
+DE944,Ahlstrom Osnabrück GmbH,Paper and printing,3260.0,12541.48,19.16,DE9
+DE501,ArcelorMittal Bremen GmbH,Iron and steel,2455775.0,5894265.92,11629.21,DE9
+DEA14,Outokumpu Nirosta GmbH,Iron and steel,,,,DEA
+DEA14,Compo GmbH & Co.KG Werk Krefeld,Chemical industry,16989.0,,,DEA
+DEA11,Henkel AG & Co. KGaA,Chemical industry,,,,DEA
+DEA12,Hüttenwerke Krupp Mannesmann GmbH,Iron and steel,4666233.0,10901034.95,24516.17,DEA
+DEA17,Oxea Deutschland GmbH,Chemical industry,,,,DEA
+DEA1D,Hydro Aluminium Rolled Products GmbH,Non-ferrous metals,304327.0,,,DEA
+DEA1D,Aluminium Norf GmbH,Non-ferrous metals,264449.0,,,DEA
+DEA12,ThyssenKrupp Steel AG,Iron and steel,84754.0,197998.32,,DEA
+DEA12,ThyssenKrupp Steel Europe AG,Iron and steel,8015583.0,18938712.19,35864.3,DEA
+DEA1C,Rheinkalk GmbH,Cement,1964856.0,,,DEA
+DEA13,TRIMET Aluminium SE,Non-ferrous metals,281099.0,,,DEA
+DEA1F,TRIMET Aluminium SE,Non-ferrous metals,166597.0,,,DEA
+DEA1F,Sasol Solvents Germany GmbH Werk Moers,Chemical industry,7709.0,,,DEA
+DEA12,DK Recycling und Roheisen GmbH,Iron and steel,273765.0,879021.1,1064.31,DEA
+DEA1A,Kalkwerke H. Oetelshofen GmbH & Co. KG,Cement,269636.0,,,DEA
+DEA13,Saint-Gobain Oberland AG,Glass,105181.0,176969.78,284.13,DEA
+DEA1F,Solvay GmbH,Chemical industry,171320.0,,,DEA
+DEA1F,Sasol-Huntsman GmbH & Co. KG,Chemical industry,202637.0,,,DEA
+DEA12,voestalpine Bahnsysteme GmbH,Iron and steel,,,,DEA
+DEA12,ArcelorMittal Ruhrort GmbH,Iron and steel,206954.0,483476.24,933.35,DEA
+DEA12,Pruna Betreiber GmbH vertreten durch die KBS GmbH,Iron and steel,2070677.0,11799884.21,,DEA
+DEA14,LANXESS AG,Chemical industry,8859.0,,,DEA
+DEA11,BASF SE,Chemical industry,335.0,,,DEA
+DEA28,Smurfit Kappa Zülpich Papier,Paper and printing,237895.0,915201.69,1398.22,DEA
+DEA27,Eisenwerk Brühl GmbH,Iron and steel,112834.0,642991.7,,DEA
+DEA23,Shell Deutschland Oil GmbH Rheinland Raffinerie Werk Nord,Refineries,1392509.0,,,DEA
+DEA27,"Shell Deutschland Oil GmbH Rheinland Raffinerie, Werk Süd",Refineries,1975074.0,,,DEA
+DEA2B,Metsä Board Zanders GmbH,Paper and printing,126044.0,484901.66,740.82,DEA
+DEA27,Evonik Degussa GmbH Werk Wesseling,Chemical industry,59468.0,,,DEA
+DEA26,Heinr. Aug. Schoeller Söhne GmbH & Co. KG Papierfabrik Schoellershammer,Paper and printing,138769.0,533855.79,815.61,DEA
+DEA24,Lanxess Deutschland GmbH,Chemical industry,126736.0,,,DEA
+DEA38,Holcim WestZement GmbH,Cement,614274.0,891581.09,866.81,DEA
+DEA36,INEOS Group Ltd,Chemical industry,3668.0,,,DEA
+DEA37,Dyckerhoff GmbH,Cement,1090865.0,1583323.75,1539.34,DEA
+DEA37,Calcis Lienen GmbH & Co.KG,Cement,155334.0,,,DEA
+DEA36,Pilkington Deutschland AG Werk Gladbeck,Glass,234154.0,412502.15,1251.25,DEA
+DEA36,Evonik Oxeno GmbH,Chemical industry,,,,DEA
+DEA36,Evonik Degussa GmbH,Chemical industry,476624.0,,,DEA
+DEA47,HeidelbergCement AG,Cement,255022.0,370148.81,359.86,DEA
+DEA46,,Iron and steel,26098.0,148721.1,,DEA
+DEA57,Reno De Medici Arnsberg GmbH,Paper and printing,199117.0,766019.52,1170.3,DEA
+DEA5B,HeidelbergCement AG HeidelbergCement AG,Cement,639608.0,927369.31,901.6,DEA
+DEA5B,Dyckerhoff GmbH,Cement,223115.0,323837.76,314.84,DEA
+DEA5B,Portland-Zementwerke Seibel & Söhne GmbH&Co.KG,Cement,304584.0,441617.13,429.34,DEA
+DEA5B,Portland-Zementwerke Gebr. Seibel GmbH & Co. KG,Cement,362334.0,525905.61,511.29,DEA
+DEA5B,Portlandzementwerk -Wittekind- Hugo Miebach Söhne KG,Cement,457526.0,664070.97,645.62,DEA
+DEA57,Rheinkalk GmbH,Cement,93051.0,,,DEA
+DEA53,Rheinkalk Hagen-Halden Betriebsführungs GmbH,Cement,,,,DEA
+DEA5A,Deutsche Edelstahlwerke GmbH,Iron and steel,121642.0,474755.75,24.62,DEA
+DEA55,Sasol Solvents Germany GmbH - Werk Herne -,Chemical industry,89432.0,,,DEA
+DEA58,Rheinkalk GmbH,Cement,847195.0,,,DEA
+DEA5B,Spenner Zement GmbH & Co. KG,Cement,729045.0,850762.28,827.13,DEA
+DEA5C,Aurubis AG,Non-ferrous metals,169134.0,,,DEA
+DEA51,ThyssenKrupp Steel Europe AG,Iron and steel,284439.0,664493.06,,DEA
+DE724,Fritz Winter Eisengiesserei GmbH & Co. KG,Iron and steel,210633.0,1200305.51,,DEA
+DE723,Schaefer Kalk GmbH & Co. KG,Cement,217832.0,,,DEA
+DE722,Buderus Edelstahl GmbH,Iron and steel,133326.0,628679.74,14.77,DEA
+DE714,Dyckerhoff GmbH,Cement,179633.0,260726.3,253.48,DEA
+DE737,SCA Packaging Containerboard Deutschland GmbH,Paper and printing,11035.0,84905.11,129.71,DEA
+DE732,Papierfabrik A. Jass GmbH & Co.KG,Paper and printing,185995.0,715538.1,1093.18,DEA
+DE732,Zement- und Kalkwerke Otterbein GmbH & Co. KG,Cement,144790.0,210153.81,204.31,DEA
+DEB17,Moritz J. Weig GmbH & Co. KG,Paper and printing,212152.0,,1246.92,DEA
+DEB1A,Schaefer Kalk GmbH & Co. KG,Cement,319119.0,,,DEA
+DEB24,Portlandzementwerk WOTAN H. Schneider KG,Cement,164864.0,239290.0,232.64,DEA
+DEB39,Evonik Röhm GmbH,Chemical industry,84845.0,,,DEA
+DEB3D,Werksgruppe Süd Dyckerhoff,Cement,639684.0,928462.15,902.67,DEA
+DEB3E,Ardagh Group,Glass,105281.0,177138.03,284.4,DEA
+DEB3E,Palm Papierfabrik GmbH & Co. KG,Paper and printing,14.0,,0.08,DEA
+DE132,Gebrüder Knauf Verwaltungsgesellschaft KG,Cement,,,,DE2
+DE214,Wacker Chemie AG,Chemical industry,14752.0,,,DE2
+DE214,OMV Deutschland GmbH,Refineries,975544.0,,,DE2
+DE219,Gunvor Raffinerie Ingolstadt GmbH,Refineries,711890.0,,,DE2
+DE21I,LEIPA Georg Leinfelder GmbH,Paper and printing,101664.0,,597.52,DE2
+DE21J,Basell Polyolefine GmbH,Chemical industry,421267.0,,,DE2
+DE21K,Südbayerisches Portland-Zementwerk Gebr. Wiesböck & Co. GmbH,Cement,730492.0,1060264.41,1030.81,DE2
+DE21N,"UPM GmbH, Werk Schongau",Paper and printing,1290.0,,7.58,DE2
+DE224,MD Papier GmbH,Paper and printing,34392.0,132308.86,202.13,DE2
+DE226,Fels-Werke GmbH,Cement,305531.0,,,DE2
+DE232,HeidelbergCement AG,Cement,178704.0,,,DE2
+DE237,Pilkington Deutschland AG,Glass,229441.0,404199.4,1226.07,DE2
+DE239,HeidelbergCement AG,Cement,902951.0,1310578.09,1274.17,DE2
+DE23A,Schott-Rohrglas GmbH,Glass,87422.0,,,DE2
+DE24A,Neue Glaswerke Grossbreitenbach GmbH & Co.KG,Glass,99250.0,166990.71,268.11,DE2
+DE25C,Solnhofer Portland-Zementwerke GmbH & Co.KG,Cement,314235.0,456092.86,443.42,DE2
+DE261,DS Smith Paper Deutschland GmbH,Paper and printing,,,,DE2
+DE264,Sappi Deutschland Holding GmbH,Paper and printing,342838.0,1318926.06,2015.02,DE2
+DE26A,HeidelbergCement AG,Cement,590041.0,856408.38,832.61,DE2
+DE26A,Schwenk Zement KG,Cement,587064.0,852087.45,828.41,DE2
+DE271,"UPM GmbH, Werk Augsburg",Paper and printing,118691.0,456614.06,697.6,DE2
+DE276,Lech-Stahlwerke GmbH,Iron and steel,143924.0,336228.5,,DE2
+DE27C,"Gebr.Lang GmbH, Papierfabrik",Paper and printing,56138.0,215967.51,329.95,DE2
+DE27D,Märker Holding GmbH,Cement,606291.0,879994.26,855.54,DE2
+DE27D,Märker Zement GmbH,Cement,184586.0,,,DE2
+DE40A,H.E.S.Hennigsdorfer Elektrostahlwerke GmbH,Iron and steel,94493.0,220750.12,21.34,DEE
+DE409,CEMEX Zement GmbH,Cement,1266662.0,1986120.19,2068.87,DEE
+DE409,Fels-Werke GmbH Kalkwerk Hornberg,Cement,237262.0,,,DEE
+DE40C,ArcelorMittal Eisenhüttenstadt GmbH,Iron and steel,1564346.0,3654551.84,7426.61,DEE
+DE401,B.E.S. Brandenburger Elektrostahlwerke GmbH,Iron and steel,156381.0,583049.39,34.73,DEE
+DE80K,YARA Rostock Zweigniederlassung der YARA GmbH & Co. KG,Chemical industry,167522.0,,,DE9
+DED52,Dow Europe Holding B.V.,Chemical industry,1296688.0,,,DEE
+DED53,Stora Enso Sachsen GmbH,Paper and printing,164626.0,633329.8,967.58,DEE
+DEE0B,Dow Olefinverbund GmbH,Chemical industry,86944.0,,,DEE
+DEE0C,Schwenk Zement KG,Cement,672763.0,976474.3,949.35,DEE
+DEE07,EUROGLAS GmbH,Glass,119698.0,210868.41,639.63,DEE
+DEE05,GUARDIAN Flachglas GmbH,Glass,118199.0,208227.67,631.62,DEE
+DEE09,Ilsenburger Grobblech GmbH,Iron and steel,104990.0,598292.17,,DEE
+DEE08,LAFARGE Zement GmbH Oberursel,Cement,882556.0,1280975.99,1245.39,DEE
+DEE08,Radici Chimica Deutschland GmbH,Chemical industry,120253.0,,,DEE
+DEE0E,SKW Stickstoffwerke Piesteritz GmbH,Chemical industry,2394804.0,,,DEE
+DEE0C,,Chemical industry,174349.0,,,DEE
+DEE0C,SOLVAY Chemicals GmbH,Chemical industry,179593.0,,,DEE
+DEE0D,Zellstoff Stendal GmbH,Paper and printing,73526.0,,,DEE
+DEE0A,ROMONTA  GmbH,Refineries,496300.0,,,DEE
+DEE09,FELS-WERKE GmbH,Cement,806130.0,,,DEE
+DEE09,FELS-WERKE GmbH,Cement,117046.0,,,DEE
+DEG06,Deuna Zement GmbH,Cement,993541.0,1442063.92,1402.0,DEE
+DE600,Shell Deutschland Oil GmbH,Refineries,321510.0,,,DE9
+DE21J,BAYERNOIL Raffineriegesellschaft mbH,Refineries,608364.0,,,DE2
+DE226,BAYERNOIL Raffineriegesellschaft mbH,Refineries,1098245.0,,,DE2
+DE40I,LEIPA Georg Leinfelder GmbH Werk Schwedt,Paper and printing,48825.0,187833.8,286.96,DEE
+DE945,Vinyls Wilhelmshaven GmbH,Chemical industry,167664.0,,,DE9
+DEA23,Saint-Gobain Glass Deutschland GmbH,Glass,148098.0,,,DEA
+DEA2D,SAINT-GOBAIN GLASS DEUTSCHLAND GMBH,Glass,108259.0,,578.5,DEA
+DEA38,Phoenix Zementwerke Krogbeumker,Cement,259013.0,375941.51,365.49,DEA
+DEE0B,TOTAL Raffinerie Mitteldeutschland GmbH,Refineries,1873500.0,,,DEE
+DEG0I,Stahlwerk Thüringen GmbH,Iron and steel,101588.0,442354.81,15.39,DEE
+DE600,Aurubis AG,Non-ferrous metals,186620.0,,,DE9
+DE939,DOW Deutschland Anlagengesellschaft Werk Stade mbH,Chemical industry,1082.0,,,DE9
+DEA27,Basell Polyolefine GmbH Werk Wesseling,Chemical industry,1343202.0,,,DEA
+DEA23,INEOS Manufacturing Deutschland GmbH,Chemical industry,2202742.0,,,DEA
+DEA32,RUHR OEL GmbH,Refineries,4568524.0,,,DEA
+DE40I,PCK Raffinerie GmbH Schwedt,Refineries,3714705.0,,,DEE
+DE40B,BASF Schwarzheide GmbH,Chemical industry,44542.0,,,DEE
+DED43,Befesa Zinc Freiberg GmbH,Non-ferrous metals,89667.0,,,DEE
+DED2E,ESF Elbe-Stahlwerke Feralpi GmbH,Iron and steel,93384.0,321913.22,23.7,DEE
+DED53,Flachglas Torgau GmbH,Glass,115042.0,202666.08,614.75,DEE
+DEE07,EUROGLAS AG,Glass,138518.0,244023.05,740.2,DEE
+DEE0B,Linde Gas Produktionsgesellschaft mbH & Co. KG,Chemical industry,663680.0,,,DEE
+DEB34,BASF,Chemical industry,3974214.0,,,DEA
+DE214,Linde Gas Produktionsgesellschaft mbH & Co. KG,Chemical industry,74367.0,,,DE2
+DEA31,ArcelorMittal Bremen GmbH,Iron and steel,301683.0,1719159.7,912.72,DEA
+DED52,Trinseo Deutschland GmbH,Chemical industry,101320.0,,,DEE
+DEA5B,Calcis Warstein GmbH & Co KG - Kalkwerk Warstein -,Cement,147357.0,,,DEA
+DEA17,Air Liquide Deutschland GmbH,Chemical industry,77696.0,,,DEA
+DEA27,Orion Engineered Carbons GmbH Werk Kalscheuren,Chemical industry,296471.0,,,DEA
+DEA28,Lafarge Zement Karsdorfer Zement GmbH,Cement,,,,DEA
+DE122,Werk 2 MIRO-Mineralölraffinerie Oberrhein GmbH & Co.KG,Refineries,,,,DE2
+DE139,BASF Handels- und Exportgesellschaft mbH,Chemical industry,,,,DE2
+DE139,DSM Nutritional Products GmbH,Chemical industry,,,,DE2
+DE13A,RWV GmbH,Paper and printing,,,,DE2
+DE118,Solvay Fluor GmbH,Chemical industry,,,,DE2
+DE938,Dow Wolff Cellulosics GmbH,Chemical industry,,,,DE9
+DE939,Aluminium Oxid Stade GmbH,Chemical industry,,,,DE9
+DE922,Elastogran GmbH,Chemical industry,,,,DE9
+DE945,INEOS Chlor Atlantik GmbH,Chemical industry,,,,DE9
+DE943,"Bayer MaterialScience AG, Leverkusen",Chemical industry,,,,DE9
+DE94G,KRONOS TITAN GmbH Werk Nordenham,Chemical industry,,,,DE9
+DE944,Technocell Dekor GmbH & Co. KG,Paper and printing,,,,DE9
+DEA12,ThyssenKrupp Steel Europe AG,Iron and steel,,1355220.68,,DEA
+DEA12,ThyssenKrupp Steel Europe AG,Iron and steel,,2253355.11,,DEA
+DEA12,ThyssenKrupp Steel Europe AG,Iron and steel,,8901153.63,,DEA
+DEA12,ThyssenKrupp Steel Europe AG,Iron and steel,,8072517.71,,DEA
+DEA19,Borbet Solingen GmbH,Non-ferrous metals,,,,DEA
+DEA12,Huntsman Corporation,Chemical industry,,,,DEA
+DEA17,OXEA S.à r.l.,Chemical industry,,,,DEA
+DEA17,Topas Advanced Polymers GmbH,Chemical industry,,,,DEA
+DEA27,Martinswerk GmbH,Chemical industry,,,,DEA
+DEA24,KRONOS INTERNATIONAL Inc.,Chemical industry,,,,DEA
+DEA23,Vinnolit GmbH & Co.KG.,Chemical industry,,,,DEA
+DEA27,Bayer AG,Chemical industry,,,,DEA
+DEA24,,Chemical industry,,,,DEA
+DEA23,Wacker Chemie AG vormals A P P bzw. Wacker Polymers,Chemical industry,,,,DEA
+DEA27,Kraton Polymers GmbH Werk Wesseling,Chemical industry,,,,DEA
+DEA24,LANXESS AG,Chemical industry,,,,DEA
+DEA38,HeidelbergCement AG,Cement,,643171.48,625.3,DEA
+DEA32,RUHR OEL GMBH,Refineries,,,,DEA
+DEA36,Chemische Fabrik Stockhausen GmbH,Chemical industry,,,,DEA
+DEA56,Evonik Degussa GmbH,Chemical industry,,,,DEA
+DE715,BASF  Lampertheim GmbH,Chemical industry,,,,DEA
+DE717,Ticona GmbH,Chemical industry,,,,DEA
+DE722,HeidelbergCement AG,Cement,,,,DEA
+DE712,Solvay Fluor GmbH,Chemical industry,,,,DEA
+DE712,Clariant Verwaltungsgesellschaft mbH + Clariant AG,Chemical industry,,,,DEA
+DEB18,Solvay & CPC Barium Strontium GmbH & Co KG,Chemical industry,,,,DEA
+DEB14,Schaefer Kalk GmbH & Co.KG,Cement,,,,DEA
+DEB39,Grace GmbH & Co. KG,Chemical industry,,,,DEA
+DE124,DOW Deutschland AnlagenGmbH Werk Rheinmünster,Chemical industry,,,,DE2
+DE211,BAYERNOIL Raffineriegesellschaft mbH,Refineries,,,,DE2
+DE21K,HBB Heizkraftwerk Bauernfeind Betreibergesellschaft mbH,Paper and printing,,,,DE2
+DE226,Kelheim Fibres GmbH,Chemical industry,,,,DE2
+DE228,AMG Mining AG,Chemical industry,,,,DE2
+DE254,"Honsel AG, Meschede",Non-ferrous metals,,,,DE2
+DE273,3M United States,Non-metallic mineral products,,,,DE2
+DE278,ARKEMA GmbH Niederlassung Günzburg-Wasserburg,Chemical industry,,,,DE2
+DED2C,Sustec Schwarze Pumpe GmbH Schwarze Pumpe GmbH,Chemical industry,,,,DEE
+DED43,Befesa Zinc Freiberg GmbH & Co. KG,Non-ferrous metals,,,,DEE
+DED2F,dgh Druckguss Heidenau GmbH Sitz Dohna,Non-ferrous metals,,,,DEE
+DED2E,Wacker-Chemie AG,Chemical industry,,,,DEE
+DEE08,CropEnergies Bioethanol GmbH,Chemical industry,,,,DEE
+DEE07,K + S KALI GmbH,Chemical industry,,,,DEE
+DEE09,FELS-WERKE GmbH,Cement,,,,DEE
+DE94D,ExxonMobil Production Deutschland GmbH,Chemical industry,,,,DE9
+DE927,ExxonMobil Production Deutschland GmbH,Chemical industry,,,,DE9
+DEE0B,TOTAL Raffinerie Mitteldeutschland GmbH,Refineries,,,,DEE
+DEA11,Vallourec Deutschland GmbH,Iron and steel,,,,DEA
+DED2E,Wacker-Chemie AG,Chemical industry,,,,DEE
+DED2F,DGH-Group Druckguss Heidenau GmbH Sitz Dohna,Non-ferrous metals,,,,DEE
+DED52,Dow Olefinverbund GmbH Herr Roghmann,Chemical industry,,,,DEE
+DED53,Stora Enso Sachsen GmbH,Paper and printing,,,,DEE
+DEE0B,Linde Gas Produktionsgesellschaft mbH & Co. KG,Chemical industry,,,,DEE
+DED43,Befesa Zinc Freiberg GmbH,Non-ferrous metals,,,,DEE
+DE13A,H.C.Stark Smelting GmbH & Co. KG,Non-metallic mineral products,,,,DE2
+DEA1F,Solvay Chlorovinyls GmbH,Chemical industry,,,,DEA
+DE272,Hans Kolb Papierfabrik GmbH & Co. KG,Paper and printing,26698.0,102709.4,156.91,DE2
+DE113,Papierfabrik Scheufelen GmbH + Co. KG,Paper and printing,68524.0,263617.48,402.74,DE2
+DE113,Papierfabrik Scheufelen GmbH + Co. KG,Paper and printing,18525.0,,,DE2
+DEE08,Südzucker Aktiengesellschaft Mannheim/Ochsenfurt,Cement,150676.0,,,DEE
+DEA27,Steinzeug-Keramo GmbH,Non-metallic mineral products,18143.0,,,DEA
+DEA32,Papierfabrik Fritz Peters GmbH & Co. KG,Paper and printing,46846.0,180220.42,275.33,DEA
+DEA51,Bochumer Verein Verkehrstechnik GmbH,Iron and steel,17629.0,100459.97,,DEA
+DEA12,Emscher Aufbereitung GmbH,Iron and steel,31558.0,73724.32,,DEA
+DE123,Refratechnik Cement GmbH,Non-metallic mineral products,11141.0,,,DE2
+DED43,Lunzenauer Papier- und Pappenfabrik GmbH & Co.KG,Paper and printing,2161.0,,,DEE
+DEA22,Weck Glaswerk GmbH,Glass,36495.0,,,DEA
+DE926,O-I GLASSPACK GmbH & Co.KG,Glass,43082.0,72486.59,116.38,DE9
+DE219,SGD Kipfenberg GmbH,Glass,34141.0,57443.12,92.22,DE2
+DE600,Hydro Aluminium Rolled Products GmbH,Non-ferrous metals,33271.0,,,DE9
+DE600,Hydro Aluminium Rolled Products GmbH,Non-ferrous metals,13819.0,,,DE9
+DEA1D,Hydro Aluminium Rolled Products GmbH,Non-ferrous metals,22346.0,,,DEA
+DEA1D,Hydro Aluminium Rolled Products GmbH,Non-ferrous metals,8118.0,,,DEA
+DEA1D,Aleris Recycling (German Works) GmbH,Non-ferrous metals,18860.0,,,DEA
+DE214,Aleris Recycling (German Works) GmbH,Non-ferrous metals,41892.0,,,DE2
+DE268,Knauf Gips KG,Non-metallic mineral products,60435.0,,,DE2
+DE24D,Ziegelwerk Waldsassen AG,Non-metallic mineral products,13039.0,,,DE2
+DED2D,Wienerberger GmbH,Non-metallic mineral products,13944.0,,,DEE
+DE916,Fermacell GmbH,Non-metallic mineral products,20968.0,,,DE9
+DE722,WENDEL GmbH,Glass,4041.0,,,DEA
+DED42,Grünperga Papier GmbH,Paper and printing,14095.0,54224.62,82.84,DEE
+DE236,Hermann Trollius GmbH,Cement,48939.0,,,DE2
+DE737,Köhler Kalk GmbH,Cement,27606.0,,,DEA
+DE949,Baerlocher GmbH,Chemical industry,7698.0,,,DE9
+DEC03,Saarstahl AG,Iron and steel,80998.0,461572.24,,DEA
+DE40G,Siniat GmbH,Non-metallic mineral products,22707.0,,,DEE
+DE113,Aleris Recycling (German Works) GmbH,Non-ferrous metals,20418.0,,,DE2
+DEG09,Wienerberger GmbH,Non-metallic mineral products,17536.0,,,DEE
+DED2F,BGH Edelstahl Freital GmbH,Iron and steel,15766.0,36831.79,5.97,DEE
+DED2F,BGH Edelstahl Freital GmbH,Iron and steel,14063.0,80138.89,,DEE
+DEG0F,Technische Glaswerke Ilmenau GmbH,Glass,3903.0,6566.89,10.54,DEE
+DED52,PQ Germany GmbH,Glass,42399.0,,,DEE
+DE234,Ziegelei Merkl OHG,Non-metallic mineral products,6496.0,,,DE2
+DEB14,Eaton Technologies GmbH,Paper and printing,4821.0,,,DEA
+DEE0C,Pfeifer & Langen GmbH & Co. KG,Cement,141542.0,,,DEE
+DE123,CREATON AG,Non-metallic mineral products,9321.0,,,DE2
+DE123,Wienerberger GmbH,Non-metallic mineral products,31014.0,,,DE2
+DE409,Ardagh Glass GmbH,Glass,42789.0,71993.61,115.58,DEE
+DE40G,Hamburger Rieger GmbH,Paper and printing,274.0,,1.61,DEE
+DE268,Franken Guss Kitzingen GmbH & Co. KG,Iron and steel,45663.0,260213.5,,DE2
+DE94B,A. Berentelg & Co. Klinker- u. Keramik-Werk,Non-metallic mineral products,7063.0,,,DE9
+DED43,Wepa Papierfabrik Sachsen GmbH,Paper and printing,16621.0,63942.35,97.68,DEE
+DE93A,Nordzucker AG,Cement,159406.0,,,DE9
+DE919,Smurfit Kappa Herzberger Papierfabrik GmbH,Paper and printing,87333.0,,,DE9
+DEA59,Gebr. Grünewald GmbH & Co. KG,Paper and printing,13679.0,52624.24,80.39,DEA
+DEA35,Hagemeister GmbH & Co. KG,Non-metallic mineral products,19692.0,,,DEA
+DEE07,f | glass GmbH,Glass,133680.0,235500.09,714.35,DEE
+DE21G,Ziegelwerk Aubenham Adam Holzner KG,Non-metallic mineral products,4279.0,,,DE2
+DEA27,RWE Power Aktiengesellschaft,Iron and steel,484187.0,2759170.32,,DEA
+DEA56,Deutsche Edelstahlwerke GmbH,Iron and steel,28349.0,161548.57,,DEA
+DEA56,Deutsche Edelstahlwerke GmbH,Iron and steel,37696.0,88063.62,14.28,DEA
+DEB1A,Neenah Lahnstein GmbH,Paper and printing,11142.0,42864.19,65.48,DEA
+DED53,Hydro Aluminium Giesserei Rackwitz GmbH,Non-ferrous metals,17815.0,,,DEE
+DEA34,Papierfabrik Vreden GmbH,Paper and printing,29322.0,112804.15,172.33,DEA
+DE226,Leipfinger-Bader KG,Non-metallic mineral products,20615.0,,,DE2
+DE21J,Flexipack International Wunderlich GmbH + Co. KG,Paper and printing,3003.0,,,DE2
+DE24B,Johann Bergmann GmbH & Co.,Cement,20239.0,,,DE2
+DE24B,Johann Bergmann GmbH & Co.,Cement,17515.0,,,DE2
+DEA44,Südzucker Aktiengesellschaft Mannheim/Ochsenfurt,Cement,30053.0,,,DEA
+DE91B,Nordzucker AG,Cement,64721.0,,,DE9
+DED45,Knauf Insulation GmbH,Non-metallic mineral products,84217.0,,,DEE
+DE929,AVISTA OIL Refining & Trading Deutschland GmbH,Refineries,34415.0,,,DE9
+DED2C,CREATON KERA-DACH GmbH & Co.KG,Non-metallic mineral products,20242.0,,,DEE
+DED43,Kübler & Niethammer Papierf Kriebstein AG,Paper and printing,71773.0,276116.65,421.84,DEE
+DEA1D,Linde Gas Produktionsgesellschaft mbH & Co. KG,Chemical industry,28631.0,,,DEA
+DE40E,Röben Klinkerwerke GmbH & Co. KG,Non-metallic mineral products,47903.0,,,DEE
+DE21B,Wöhrl GmbH & Co,Non-metallic mineral products,6543.0,,,DE2
+DE407,Klinkerwerk Muhr GmbH & Co. KG,Non-metallic mineral products,6640.0,,,DEE
+DE736,Hollingsworth & Vose GmbH,Paper and printing,2569.0,9883.15,15.09,DEA
+DE271,Osram GmbH,Glass,8600.0,,,DE2
+DE271,Osram GmbH,Glass,17845.0,,,DE2
+DED2D,Stölzle Lausitz GmbH,Glass,16970.0,,,DEE
+DEE0C,Wienerberger GmbH,Non-metallic mineral products,,,,DEE
+DEA27,Rhein Papier GmbH,Paper and printing,1.0,,0.005877487146371,DEA
+DE944,Wienerberger GmbH,Non-metallic mineral products,13868.0,,,DE9
+DE145,Sappi Ehingen GmbH,Paper and printing,40432.0,155545.23,237.63,DE2
+DED2F,Papierfabrik Louisenthal GmbH,Paper and printing,11301.0,43475.87,66.42,DEE
+DEA37,Calcis Lienen GmbH & Co. KG,Cement,,,,DEA
+DEA2D,BERZELIUS Stolberg GmbH,Non-ferrous metals,50544.0,,,DEA
+DEC01,Saarschmiede GmbH Freiformschmiede,Iron and steel,10594.0,,4.01,DEA
+DEC01,Saarschmiede GmbH Freiformschmiede,Iron and steel,38901.0,221679.81,,DEA
+DEC01,Saarschmiede GmbH Freiformschmiede,Iron and steel,60264.0,343418.22,,DEA
+DE80N,Suiker Unie GmbH & Co. KG,Cement,96018.0,,,DE9
+DEA11,Hakle GmbH,Paper and printing,7186.0,27645.13,42.23,DEA
+DEA28,Pfeifer & Langen GmbH & Co. KG,Cement,129299.0,,,DEA
+DE927,Oxxynova GmbH,Chemical industry,106905.0,,,DE9
+DEA36,Deutsche Rockwool Mineralwoll GmbH & Co. OHG,Non-metallic mineral products,63461.0,,,DEA
+DEA2D,Schwermetall Halbzeugwerk GmbH & Co.KG,Non-ferrous metals,11410.0,,,DEA
+DEG0I,Papierfabrik Adolf Jass Schwarza GmbH,Paper and printing,,,,DEE
+DE134,Koehler Kehl GmbH,Paper and printing,26899.0,103482.67,158.09,DE2
+DE94D,Wienerberger GmbH,Non-metallic mineral products,12039.0,,,DE9
+DEA57,Perstorp Chemicals GmbH,Chemical industry,51262.0,,,DEA
+DE217,Ziegel Leonhard Helfer eK,Non-metallic mineral products,2044.0,,,DE2
+DEA27,Evonik Röhm GmbH,Chemical industry,95370.0,,,DEA
+DE135,Knauf Gips KG,Non-metallic mineral products,18844.0,,,DE2
+DED2D,CRH Clay Solutions GmbH,Non-metallic mineral products,11642.0,,,DEE
+DE724,Buderus Guss GmbH,Iron and steel,45313.0,258219.0,,DEA
+DEB17,Magnesita Refractories GmbH,Non-metallic mineral products,7574.0,,,DEA
+DED45,Wienerberger GmbH,Non-metallic mineral products,12072.0,,,DEE
+DE925,Nordzucker AG,Cement,122642.0,,,DE9
+DEE07,ROCKWOOL Mineralwolle GmbH Flechtingen,Non-metallic mineral products,57173.0,,,DEE
+DE501,BRE.M.A Warmwalz GmbH & Co. KG,Iron and steel,556549.0,1300183.7,,DE9
+DED53,URSA Deutschland GmbH,Glass,22565.0,,,DEE
+DEB11,Aleris Rolled Products Germany GmbH,Non-ferrous metals,25346.0,,,DEA
+DEB11,Aleris Rolled Products Germany GmbH,Non-ferrous metals,34690.0,,,DEA
+DEB11,Kimberly-Clark GmbH,Paper and printing,12665.0,48723.29,74.43,DEA
+DEA51,ThyssenKrupp Steel Europe AG,Iron and steel,19895.0,113372.91,,DEA
+DEA1D,Bayer MaterialScience Aktiengesellschaft,Chemical industry,5607.0,,,DEA
+DEG0H,Lauscha Fiber International GmbH,Glass,15488.0,,,DEE
+DEA1B,Deutsche Giessdraht Gesellschaft mbH,Non-ferrous metals,17801.0,,,DEA
+DE721,Didier Werke AG,Non-metallic mineral products,14337.0,,,DEA
+DEA2C,Didier Werke AG,Non-metallic mineral products,13581.0,,,DEA
+DE277,CREATON AG,Non-metallic mineral products,9881.0,,,DE2
+DEA53,Magnesita Refractories GmbH,Non-metallic mineral products,28424.0,,,DEA
+DE132,Schoeller Technocell GmbH & Co.KG,Paper and printing,26519.0,102020.78,155.86,DE2
+DE27D,Südzucker Aktiengesellschaft Mannheim/Ochsenfurt,Cement,72322.0,,,DE2
+DEA37,A. Berentelg & Co. Klinker- u. Keramik-Werk,Non-metallic mineral products,6539.0,,,DEA
+DEA5C,Ardagh Glass GmbH,Glass,50814.0,85495.88,137.26,DEA
+DEF0D,Ardagh Glass GmbH,Glass,36962.0,62189.53,99.84,DE9
+DE229,Zwiesel Kristallglas AG,Glass,26581.0,,,DE2
+DE128,Saint-Gobain Isover G+H AG,Non-metallic mineral products,45594.0,,,DE2
+DEA51,P-D refractories GmbH,Non-metallic mineral products,15536.0,,,DEA
+DE269,Odenwald Faserplattenwerk GmbH,Non-metallic mineral products,18193.0,,,DE2
+DE233,Nachtmann GmbH Werk Weiden,Glass,10448.0,,,DE2
+DEE04,HNG Global GmbH,Glass,40245.0,67713.26,108.71,DEE
+DE224,Südzucker Aktiengesellschaft Mannheim/Ochsenfurt,Cement,92639.0,,,DE2
+DE94C,Klingele Papierwerke GmbH & Co. KG,Paper and printing,3310.0,,19.45,DE9
+DED2F,Papierfabrik Hainsberg GmbH,Paper and printing,12.0,,0.07,DEE
+DED2F,P-D Industriegesellschaft mbH,Glass,13061.0,21975.47,35.28,DEE
+DEA26,Pfeifer & Langen GmbH & Co. KG,Cement,190795.0,,,DEA
+DEA1D,FS-Karton GmbH,Paper and printing,116662.0,448808.33,685.67,DEA
+DEA52,ThyssenKrupp Steel Europe AG,Iron and steel,22801.0,53266.62,,DEA
+DEA52,ThyssenKrupp Steel Europe AG,Iron and steel,30551.0,71371.81,,DEA
+DE916,A. Obenauf GmbH & Co. KG,Paper and printing,2285.0,,,DE9
+DE24D,Glasfabrik Lamberts GmbH & Co. KG,Glass,19025.0,33515.77,101.66,DE2
+DEA44,August Lücking GmbH & Co. KG,Non-metallic mineral products,23178.0,,,DEA
+DE912,Ilsenburger Grobblech GmbH,Iron and steel,20878.0,118974.6,,DE9
+DEA5C,Hoesch Schwerter Profile GmbH,Iron and steel,8924.0,50853.98,,DEA
+DEB21,MSW Moselstahlwerk GmbH,Iron and steel,16737.0,39100.19,,DEA
+DE131,Solvay Acetow GmbH,Chemical industry,15095.0,,,DE2
+DE115,Ziegelwerk Schmid GmbH & Co.,Non-metallic mineral products,7986.0,,,DE2
+DEA28,Hammerwerk Erft G. Diederichs GmbH & Co KG,Iron and steel,21722.0,123784.19,,DEA
+DED43,NARVA Lichtquellen GmbH + Co. KG,Glass,7639.0,,,DEE
+DEF09,Papierfabrik Meldorf GmbH & Co. Kommanditgesellschaft,Paper and printing,26159.0,,,DE9
+DEA51,Outokumpu Nirosta GmbH,Iron and steel,49413.0,115436.33,,DEA
+DEA34,Klinkerwerk H. u. J. Iking GmbH & Co. KG,Non-metallic mineral products,3275.0,,,DEA
+DE124,Smurfit Kappa Baden Karton GmbH,Paper and printing,61898.0,,,DE2
+DED43,Schoeller Technocell GmbH & Co.KG,Paper and printing,,,,DEE
+DED2E,Meissen Keramik GmbH,Non-metallic mineral products,12072.0,,,DEE
+DEA1B,Klinkerwerke Heinrich W. Muhr GmbH & Co KG,Non-metallic mineral products,5578.0,,,DEA
+DEA38,HeidelbergCement AG,Cement,446159.0,647572.47,629.58,DEA
+DED43,Schoeller Technocell GmbH & Co.KG,Paper and printing,,,,DEE
+DEA1D,SCA Hygiene Products GmbH Neuss,Paper and printing,36272.0,139541.37,213.18,DEA
+DEA1C,Georg Fischer GmbH,Iron and steel,101564.0,578768.89,,DEA
+DEA5C,Outokumpu VDM GmbH,Non-ferrous metals,18558.0,,,DEA
+DE94F,Olfry Ziegelwerke GmbH & Co.KG,Non-metallic mineral products,12027.0,,,DE9
+DEA11,Julius Schulte Söhne GmbH & Co. KG,Paper and printing,33873.0,130312.22,199.08,DEA
+DE714,Wepa Hygieneprodukte GmbH,Paper and printing,7461.0,28703.08,43.85,DEA
+DEG0L,Wünschendorfer Dolomitwerk GmbH,Cement,67227.0,,,DEE
+DEB1B,Steuler-Industriewerke GmbH,Non-metallic mineral products,9193.0,,,DEA
+DE931,Drewsen Spezialpapiere GmbH & Co. KG,Paper and printing,3622.0,,21.28,DE9
+DEB34,Almatis GmbH,Non-metallic mineral products,5287.0,,,DEA
+DEB34,Almatis GmbH,Non-metallic mineral products,19187.0,,,DEA
+DEA14,Outokumpu Nirosta GmbH,Iron and steel,44634.0,254349.67,,DEA
+DEA44,Walther-Glas Deutschland GmbH,Glass,,,,DEA
+DE24A,Heinz-Glas GmbH & Co.KGaA,Glass,13373.0,22500.42,36.12,DE2
+DE24A,Heinz-Glas Produktion GmbH & Co.KGaA,Glass,5595.0,,,DE2
+DEA2D,SAINT-GOBAIN GLASS Deutschland GmbH,Glass,72595.0,127888.45,387.92,DEA
+DE134,Badische Stahlwerke GmbH,Iron and steel,67711.0,385855.42,,DE2
+DE134,Badische Stahlwerke GmbH,Iron and steel,115271.0,269290.71,43.69,DE2
+DEA1E,Abelan Viersen Paperboard GmbH,Paper and printing,,,,DEA
+DEE0C,Ardagh Glass GmbH,Glass,98943.0,52489.76,84.27,DEE
+DEE0C,Ardagh Glass GmbH,Glass,10670.0,,,DEE
+DEE0C,Ardagh Glass GmbH,Glass,26202.0,,,DEE
+DEE0C,Ardagh Glass GmbH,Glass,30874.0,,,DEE
+DE269,FRIPA Papierfabrik Albert Friedrich KG,Paper and printing,12237.0,47076.74,71.92,DE2
+DEA37,Recker Ziegelwerk Berentelg & Hebrok OHG,Non-metallic mineral products,12876.0,,,DEA
+DE228,Tonwarenfabrik und Granitwerke F. Erbersdobler KG,Non-metallic mineral products,14550.0,,,DE2
+DE926,Kartonfabrik Kaierde GmbH & Co. Produktions-KG,Paper and printing,7077.0,,,DE9
+DEA5A,ThyssenKrupp Steel Europe AG,Iron and steel,20504.0,47900.48,,DEA
+DE126,Daimler AG,Iron and steel,39978.0,227817.16,,DE2
+DEB35,Schott AG,Glass,33483.0,,,DEA
+DEB35,Duran Produktions GmbH & Co. KG,Glass,2125.0,,,DEA
+DEA35,Ziegelwerk Vinnum GmbH,Non-metallic mineral products,,,,DEA
+DE714,SCA Hygiene Products GmbH,Paper and printing,10516.0,40455.91,61.8,DEA
+DE714,SCA Hygiene Products GmbH,Paper and printing,12696.0,,,DEA
+DE714,SCA Hygiene Products GmbH,Paper and printing,44211.0,,,DEA
+DE227,ERLUS Aktiengesellschaft,Non-metallic mineral products,19349.0,,,DE2
+DE227,ERLUS Aktiengesellschaft,Non-metallic mineral products,1686.0,,,DE2
+DE227,ERLUS Aktiengesellschaft,Non-metallic mineral products,5981.0,,,DE2
+DE227,ERLUS Aktiengesellschaft,Non-metallic mineral products,19922.0,,,DE2
+DEG0K,Zellstoff- und Papierfabrik Rosenthal GmbH,Paper and printing,42877.0,,,DEE
+DE124,Katz GmbH & Co. KG,Paper and printing,5124.0,19712.45,30.11,DE2
+DEA57,Papierwerk Sundern GmbH,Paper and printing,2977.0,11452.76,17.49,DEA
+DEA37,Chemische Fabrik Wibarco GmbH,Chemical industry,9010.0,,,DEA
+DEB35,INEOS Paraform GmbH & Co. KG,Chemical industry,,,,DEA
+DE94A,Klinkerziegelei Grabstede Uhlhorn GmbH & Co.KG,Non-metallic mineral products,3533.0,,,DE9
+DE732,Zement- und Kalkwerke Otterbein GmbH & Co. KG,Cement,62565.0,,,DEA
+DEB1B,Alois Korzilius INTERBAU GmbH & Co. KG,Non-metallic mineral products,11296.0,,,DEA
+DEA45,Pfeifer & Langen GmbH & Co. KG,Cement,42115.0,,,DEA
+DEA44,Ziegelwerk Otto Bergmann GmbH,Non-metallic mineral products,19768.0,,,DEA
+DEA46,Monier Braas GmbH,Non-metallic mineral products,10941.0,,,DEA
+DEA11,BASF Personal Care and Nutrition GmbH,Glass,102538.0,,,DEA
+DEA55,Evonik Degussa GmbH,Chemical industry,42407.0,,,DEA
+DEA55,Evonik Degussa GmbH,Chemical industry,23216.0,,,DEA
+DEA11,Outokumpu Nirosta GmbH,Iron and steel,20475.0,116678.08,,DEA
+DE918,Auer Lighting GmbH,Glass,7307.0,,,DE9
+DE124,Glatfelter Gernsbach GmbH & Co. KG,Paper and printing,66012.0,253953.6,387.98,DE2
+DE94E,Hollager Ziegelw. Berentelg & Hebrok GmbH & Co. KG,Non-metallic mineral products,5849.0,,,DE9
+DE735,Südzucker Aktiengesellschaft Mannheim/Ochsenfurt,Cement,29133.0,,,DEA
+DEA2A,Ahlstrom Osnabrück GmbH,Paper and printing,,,,DEA
+DE71E,KeraForm Spezialziegel GmbH & Co. KG,Non-metallic mineral products,1731.0,,,DEA
+DEA58,J. Tönnesmann & Vogel GmbH & Co. Papierfabrik,Paper and printing,3045.0,11714.36,17.89,DEA
+DEA56,Erfurt & Sohn KG,Paper and printing,3315.0,12753.07,19.48,DEA
+DEG06,ERLUS Aktiengesellschaft,Non-metallic mineral products,3988.0,,,DEE
+DEF01,Mitsubishi HiTec Paper Europe GmbH,Paper and printing,31738.0,122098.7,186.53,DE9
+DEG0I,SP Spezialglas Piesau GmbH,Glass,20880.0,,0.12,DEE
+DEG0I,GTP GlasTechnik Pieau GmbH & Co. KG,Glass,20835.0,,,DEE
+DE926,Schott AG,Glass,10443.0,,,DE9
+DEC04,Bauglasindustrie GmbH,Glass,12640.0,,,DEA
+DEC01,Saarstahl AG,Iron and steel,64771.0,369101.65,,DEA
+DE916,Harz-Metall GmbH,Non-ferrous metals,57877.0,,,DE9
+DEA45,Ziegelwerk Otto Bergmann GmbH,Non-metallic mineral products,19271.0,,,DEA
+DE916,"Berthold Brinkmann, Insolvenzverwalter der Dr. Genthe GmbH & Co.",Glass,,,,DE9
+DE94D,Wienerberger GmbH,Non-metallic mineral products,7778.0,,,DE9
+DEF05,TOTAL Bitumen Deutschland GmbH,Refineries,35842.0,,,DE9
+DE712,Celanese Chemicals Europe GmbH,Chemical industry,,,,DEA
+DE712,Celanese Chemicals Europe GmbH,Chemical industry,22806.0,,,DEA
+DE214,Vinnolit GmbH & Co. KG,Chemical industry,39667.0,,,DE2
+DE214,Clariant Produkte (Deutschland) GmbH,Chemical industry,,,,DE2
+DE214,Clariant Produkte (Deutschland) GmbH,Chemical industry,60753.0,,,DE2
+DE214,Clariant Produkte (Deutschland) GmbH,Chemical industry,,,,DE2
+DEE09,Wienerberger GmbH,Non-metallic mineral products,6646.0,,,DEE
+DEE09,Wienerberger GmbH,Non-metallic mineral products,2491.0,,,DEE
+DEA1B,Oleon GmbH,Chemical industry,2530.0,,,DEA
+DE12B,Steuler-Fliesen GmbH,Non-metallic mineral products,13753.0,,,DE2
+DEB24,Nikolaus Müller Kalkwerk-Natursteinw. GmbH & Co.KG,Cement,43689.0,,,DEA
+DEA27,Vinnolit GmbH & Co. KG,Chemical industry,41511.0,,,DEA
+DED52,Siniat GmbH,Non-metallic mineral products,22247.0,,,DEE
+DE80O,Saint-Gobain Isover G+H AG,Glass,21165.0,,,DE9
+DEB38,Saint-Gobain Isover G+H AG,Glass,52826.0,,,DEA
+DE267,Papierfabrik Palm GmbH & Co. KG,Paper and printing,7785.0,,45.75,DE2
+DEA27,Vinnolit GmbH & Co. KG,Chemical industry,4118.0,,,DEA
+DEA27,Vinnolit GmbH & Co. KG,Chemical industry,5261.0,,,DEA
+DE27C,Ziegelwerk Stengel GmbH & Co. KG,Non-metallic mineral products,2739.0,,,DE2
+DEA2D,Porcelaingres GmbH,Non-metallic mineral products,25012.0,,,DEA
+DEB3C,Cordier Spezialpapier GmbH,Paper and printing,63.0,242.36,0.37,DEA
+DEA2B,Saint-Gobain Isover G+H AG,Glass,50201.0,,,DEA
+DEG0J,Wienerberger GmbH,Non-metallic mineral products,19417.0,,,DEE
+DEB38,Haltermann GmbH,Refineries,22248.0,,,DEA
+DE94G,Nordenhamer Zinkhütte GmbH,Non-ferrous metals,9561.0,,,DE9
+DE939,Aluminium Oxid Stade GmbH,Non-ferrous metals,415235.0,,,DE9
+DE94G,Weser-Metall GmbH,Non-ferrous metals,53280.0,,,DE9
+DE138,Georg Fischer Automobilguss GmbH,Iron and steel,118782.0,676886.76,,DE2
+DE721,Bosch Thermotechnik GmbH,Iron and steel,15426.0,87906.03,,DEA
+DEB3C,Cordier Spezialpapier GmbH,Paper and printing,264.0,,1.55,DEA
+DEA12,Outokumpu VDM GmbH,Non-ferrous metals,64504.0,,,DEA
+DEA42,Kalk- und Mergelwerke Heinrich Müller GmbH & Co.KG,Cement,9589.0,,,DEA
+DEB24,Rheinkalk GmbH,Cement,14295.0,,,DEA
+DE737,SCA Hygiene Products GmbH Witzenhausen,Paper and printing,8400.0,,,DEA
+DE722,Outokumpu Nirosta GmbH,Iron and steel,29740.0,169475.27,,DEA
+DEA36,RÜTGERS Basic Aromatics GmbH,Chemical industry,30096.0,,,DEA
+DEA36,RÜTGERS Aromatic Chemicals GmbH,Chemical industry,3310.0,,,DEA
+DED43,Kerateam Fliesenproduktions und -vertriebs GmbH & Co.KG,Non-metallic mineral products,33569.0,,,DEE
+DEC01,Neue Halberg-Guss GmbH,Iron and steel,93410.0,532302.8,,DEA
+DE94A,Röben Tonbaustoffe GmbH,Non-metallic mineral products,7226.0,,,DE9
+DE944,KME Germany GmbH & Co. KG,Non-ferrous metals,20455.0,,,DE9
+DEB17,ThyssenKrupp Rasselstein GmbH,Iron and steel,65523.0,373386.97,,DEA
+DEB13,Interface Solutions Altenkirchen GmbH,Paper and printing,4791.0,18431.37,28.15,DEA
+DE11A,Karl Kurz GmbH & Co. KG,Paper and printing,4457.0,17146.44,26.19,DE2
+DEA28,Katharina Tillmann Papier und Wellpappenfabrik e.K.,Paper and printing,40810.0,156999.43,239.86,DEA
+DE217,Feinpappenwerk Gebr. Schuster GmbH & Co. KG,Paper and printing,11269.0,,,DE2
+DE26B,Ziegelwerk Englert GmbH,Non-metallic mineral products,5255.0,,,DE2
+DEA1E,Smurfit Kappa Viersen Papier GmbH,Paper and printing,17434.0,,,DEA
+DE929,Columbian Carbon Deutschland GmbH,Chemical industry,133652.0,,,DE9
+DEB1B,Röben Tonbaustoffe GmbH,Non-metallic mineral products,10293.0,,,DEA
+DEA26,GRACE Silica GmbH,Glass,17560.0,,,DEA
+DEA1D,Praxair Deutschland GmbH,Chemical industry,5466.0,,,DEA
+DE40I,UPM GmbH,Paper and printing,,,,DEE
+DE223,Wienerberger GmbH,Non-metallic mineral products,14650.0,,,DE2
+DE276,ZIEGELWERK MARKT WALD GMBH,Non-metallic mineral products,4602.0,,,DE2
+DE276,Rapis - Ziegel Schmid GmbH & Co. KG,Non-metallic mineral products,3912.0,,,DE2
+DE21A,Schlagmann Poroton GmbH & Co. KG,Non-metallic mineral products,15512.0,,,DE2
+DEE0A,MKM Mansfelder Kupfer und Messing GmbH,Non-ferrous metals,9241.0,,,DEE
+DEE06,Propapier PM1 GmbH,Paper and printing,7.0,,0.04,DEE
+DE258,WALTHER DACHZIEGEL GMBH,Non-metallic mineral products,14635.0,,,DE2
+DE929,HeidelbergCement AG,Cement,447247.0,648464.59,630.45,DE9
+DEA18,Karl Diederichs KG,Iron and steel,,,,DEA
+DE22C,Girnghuber GmbH,Non-metallic mineral products,9007.0,,,DE2
+DE22C,Girnghuber GmbH,Non-metallic mineral products,4466.0,,,DE2
+DE22C,Girnghuber GmbH,Non-metallic mineral products,3905.0,,,DE2
+DE22C,Girnghuber GmbH,Non-metallic mineral products,8995.0,,,DE2
+DE22C,Girnghuber GmbH,Non-metallic mineral products,5371.0,,,DE2
+DE22C,Girnghuber GmbH,Non-metallic mineral products,4825.0,,,DE2
+DE118,Südzucker Aktiengesellschaft Mannheim/Ochsenfurt,Cement,66989.0,,,DE2
+DEA1F,Solvin GmbH & Co.KG,Chemical industry,21016.0,,,DEA
+DEA1F,Benteler Steel/Tube GmbH,Iron and steel,52487.0,299100.49,,DEA
+DEA28,Pappenfabrik Nierfeld Joseph Piront GmbH & Co. KG,Paper and printing,2498.0,,,DEA
+DEE07,Nordzucker AG,Cement,122149.0,,,DEE
+DED2E,Salzgitter Mannesmann Rohr Sachsen GmbH,Iron and steel,29929.0,170552.3,,DEE
+DEC04,Nemak Dillingen GmbH,Non-ferrous metals,51275.0,,,DEA
+DE264,Adolf Zeller GmbH & Co. Poroton-Ziegelwerke KG,Non-metallic mineral products,7929.0,,,DE2
+DE26C,Südzucker Aktiengesellschaft Mannheim/Ochsenfurt,Cement,134227.0,,,DE2
+DEA2C,Mannstaedt GmbH,Iron and steel,22367.0,127459.76,,DEA
+DEE0E,Borealis Agrolinz Melamine Deutschland GmbH,Chemical industry,31254.0,,,DEE
+DE229,Spiegelau GmbH Werk Spiegelau,Glass,12146.0,,,DE2
+DE407,Südzucker Aktiengesellschaft Mannheim/Ochsenfurt,Cement,54837.0,,,DEE
+DEG0L,Koehler Greiz GmbH & Co. KG,Paper and printing,,,,DEE
+DE251,Wienerberger GmbH,Non-metallic mineral products,19380.0,,,DE2
+DE94B,Deppe Backstein-Keramik GmbH,Non-metallic mineral products,5321.0,,,DE9
+DE949,H & R Chemisch-Pharmazeutische Spezialitäten GmbH,Refineries,42011.0,,,DE9
+DEA37,Kalkwerke Otto Breckweg GmbH & Co. KG,Cement,30178.0,,,DEA
+DE502,NordCeram GmbH,Non-metallic mineral products,30307.0,,,DE9
+DE600,H & R Ölwerke Schindler GmbH,Refineries,74224.0,,,DE9
+DE27B,Schoeller Technocell GmbH & Co.KG,Paper and printing,151.0,,0.88,DE2
+DEA47,Benteler Steel/Tube GmbH,Iron and steel,48541.0,113399.21,,DEA
+DEA41,Mitsubishi HiTec Paper Europe GmbH,Paper and printing,9639.0,37082.02,56.65,DEA
+DEA26,KANZAN Spezialpapiere GmbH,Paper and printing,6188.0,23805.74,36.36,DEA
+DE27D,Ziegelwerk Stengel GmbH & Co. KG,Non-metallic mineral products,11421.0,,,DE2
+DE94E,Klinkerwerk B. Feldhaus GmbH & Co. KG,Non-metallic mineral products,13049.0,,,DE9
+DE915,Novelis Deutschland GmbH,Non-ferrous metals,23009.0,,,DE9
+DEA14,Deutsche Edelstahlwerke GmbH,Iron and steel,617.0,1441.4,,DEA
+DEA14,Deutsche Edelstahlwerke GmbH,Iron and steel,30241.0,172330.25,,DEA
+DE124,Mayr-Melnhof Gernsbach GmbH,Paper and printing,66653.0,,,DE2
+DE40C,Propapier PM 2 GmbH,Paper and printing,9.0,,0.05,DEE
+DE22B,Wienerberger GmbH,Non-metallic mineral products,10103.0,,,DE2
+DEA58,Hoesch Hohenlimburg GmbH,Iron and steel,99638.0,567793.46,,DEA
+DE71C,Klinker- und Ziegelwerk Franz Wenzel GmbH & Co. KG,Non-metallic mineral products,8699.0,,,DEA
+DE21A,CREATON AG,Non-metallic mineral products,12856.0,,,DE2
+DE736,Sprick GmbH Bielefelder Papier- u. Wellpappenwerke,Paper and printing,501.0,,2.94,DEA
+DE736,Smurfit Kappa C.D. Haupt Papier- und Pappenfabrik GmbH,Paper and printing,86904.0,334326.85,510.77,DEA
+DE94E,Wienerberger GmbH,Non-metallic mineral products,15564.0,,,DE9
+DEA5C,Walter Hundhausen GmbH,Iron and steel,42270.0,240878.27,,DEA
+DE915,Jacobi Tonwerke GmbH,Non-metallic mineral products,29181.0,,,DE9
+DEB1B,Bernhard Link GmbH & Co. KG,Non-metallic mineral products,7612.0,,,DEA
+DEA42,Wienerberger GmbH,Non-metallic mineral products,17384.0,,,DEA
+DED2C,O-I GLASSPACK GmbH & Co.KG,Glass,13415.0,22571.08,36.23,DEE
+DEG03,SCHOTT Technical Glass Solutions GmbH,Glass,17900.0,,,DEE
+DE21K,Neenah Gessner GmbH,Paper and printing,8251.0,31742.27,48.49,DE2
+DE21K,Neenah Gessner GmbH,Paper and printing,8224.0,,,DE2
+DEA26,Gebr. Hoffsümmer Spezialpapier GmbH Co. KG,Paper and printing,10251.0,39436.44,60.25,DEA
+DE132,Hans G. Hauri KG Mineralstoffwerke,Cement,33360.0,,,DE2
+DEA36,VESTOLIT GmbH,Chemical industry,61679.0,,,DEA
+DEA36,Sasol Germany GmbH,Chemical industry,72369.0,,,DEA
+DEA36,INEOS Styrenics GmbH,Chemical industry,1064.0,,,DEA
+DEA36,INEOS Styrenics GmbH,Chemical industry,,,,DEA
+DEA36,INEOS Styrenics GmbH,Chemical industry,27.0,,,DEA
+DEA36,ISP Marl GmbH,Chemical industry,,,,DEA
+DEA36,ISP Marl GmbH,Chemical industry,25901.0,,,DEA
+DEE0E,Zahna-Fliesen GmbH,Non-metallic mineral products,10204.0,,,DEE
+DED52,Julius Schulte Trebsen GmbH & Co. KG,Paper and printing,45631.0,175546.22,268.19,DEE
+DE217,Hörl & Hartmann Ziegeltechnik GmbH & Co. KG,Non-metallic mineral products,26319.0,,,DE2
+DEF09,Stora Enso Uetersen GmbH,Paper and printing,8990.0,34585.27,52.83,DE9
+DED2F,Glatfelter Dresden GmbH,Paper and printing,30955.0,119086.43,181.93,DEE
+DEB14,Pall Filtersystems GmbH,Paper and printing,8734.0,,,DEA
+DEA11,V & M DEUTSCHLAND GmbH,Iron and steel,54507.0,310611.59,,DEA
+DEA11,V & M DEUTSCHLAND GmbH,Iron and steel,25973.0,148008.78,,DEA
+DEA11,V & M DEUTSCHLAND GmbH,Iron and steel,24556.0,139933.92,,DEA
+DEA11,V & M DEUTSCHLAND GmbH,Iron and steel,47321.0,269661.71,,DEA
+DEA11,V & M DEUTSCHLAND GmbH,Iron and steel,18982.0,108170.13,,DEA
+DE118,Pucaro Elektro-Isolierstoffe GmbH,Paper and printing,3445.0,13253.19,20.24,DE2
+DE923,Rheinkalk GmbH,Cement,25971.0,,,DE9
+DE932,Fibo ExClay Deutschland GmbH,Non-metallic mineral products,21861.0,,,DE9
+DEE09,Gienanth GmbH,Iron and steel,37528.0,213855.68,,DEE
+DEA52,HSP Hoesch Spundwand und Profil Gesellschaft mit beschränkter Haftung,Iron and steel,26551.0,151302.55,,DEA
+DEA1B,Pfeifer & Langen GmbH & Co. KG,Cement,49624.0,,,DEA
+DE94E,Refratechnik Ceramics GmbH,Non-metallic mineral products,11291.0,,,DE9
+DEA47,Benteler Steel/Tube GmbH,Iron and steel,27753.0,158152.23,,DEA
+DEB12,Deutsche Steinzeug Cremer & Breuer AG,Non-metallic mineral products,30954.0,,,DEA
+DE714,WIEGLA GmbH,Glass,7640.0,,,DEA
+DEB3C,Cordier Spezialpapier GmbH,Paper and printing,311.0,,1.82,DEA
+DEB1B,Westerwälder Blumentopf-Fabrik Spang GmbH & Co. KG,Non-metallic mineral products,9239.0,,,DEA
+DE71E,Spezialpapierfabrik Oberschmitten GmbH,Paper and printing,,,,DEA
+DE134,Papierwerke Lenk AG,Paper and printing,19720.0,75864.46,115.9,DE2
+DEA12,Befesa Zinc Duisburg GmbH,Non-ferrous metals,37316.0,,,DEA
+DE219,Ziegelwerk Turber GmbH,Non-metallic mineral products,8590.0,,,DE2
+DE922,Wehrmann-Ziegel GmbH,Non-metallic mineral products,2447.0,,,DE9
+DE145,Wienerberger GmbH,Non-metallic mineral products,8423.0,,,DE2
+DE21M,Hamburger Rieger GmbH,Paper and printing,3969.0,15269.07,23.32,DE2
+DED2E,Schmiedewerke Gröditz GmbH,Iron and steel,8873.0,50563.35,,DEE
+DED2E,Schmiedewerke Gröditz GmbH,Iron and steel,47588.0,271183.23,,DEE
+DED2E,Schmiedewerke Gröditz GmbH,Iron and steel,10010.0,23384.89,3.79,DEE
+DEA35,Wienerberger GmbH,Non-metallic mineral products,20792.0,,,DEA
+DE26A,Gerresheimer Lohr GmbH,Glass,60274.0,101412.58,162.82,DE2
+DE915,DBW Advanced Fiber Technologies GmbH,Non-metallic mineral products,9162.0,,,DE9
+DE118,Texon Möckmühl GmbH,Paper and printing,7138.0,27460.47,41.95,DE2
+DE277,CREATON AG,Non-metallic mineral products,8217.0,,,DE2
+DEA57,Wepa Hygieneprodukte GmbH,Paper and printing,17566.0,67577.85,103.24,DEA
+DEA57,Wepa Hygieneprodukte GmbH,Paper and printing,24387.0,,,DEA
+DE234,Kristall-Glasfabrik Amberg GmbH & Co. KG,Glass,10088.0,,,DE2
+DEC02,V & B Fliesen GmbH,Non-metallic mineral products,24767.0,,,DEA
+DE915,Refratechnik Cement GmbH,Non-metallic mineral products,9135.0,,,DE9
+DEA13,Gerresheimer Essen GmbH,Glass,45468.0,76501.09,122.82,DEA
+DE21I,Saint-Gobain Oberland AG,Glass,78559.0,132177.57,212.21,DE2
+DE21I,Deutsche Rockwool Mineralwoll GmbH & Co. OHG,Non-metallic mineral products,73091.0,,,DE2
+DEC01,Saint-Gobain PAM Deutschland GmbH,Iron and steel,50487.0,287703.37,,DEA
+DEC04,Stahlwerk Bous GmbH,Iron and steel,24361.0,56911.02,9.23,DEA
+DE12C,Baiersbronn Frischfaser Karton GmbH,Paper and printing,31377.0,120709.9,184.41,DE2
+DE408,Saint-Gobain Rigips GmbH,Non-metallic mineral products,38984.0,,,DEE
+DEA32,Saint-Gobain Rigips GmbH,Non-metallic mineral products,31021.0,,,DEA
+DEA47,Pasel & Lohmann Ziegelwerke GmbH,Non-metallic mineral products,5563.0,,,DEA
+DEA57,Ritzenhoff AG,Glass,20294.0,,,DEA
+DE94E,Argelith Bodenkeramik H. Bitter GmbH,Non-metallic mineral products,16556.0,,,DE9
+DEA1F,Aleris Rolled Products Germany GmbH,Non-ferrous metals,23021.0,,,DEA
+DEA56,Deutsche Edelstahlwerke GmbH,Iron and steel,3730.0,21255.64,,DEA
+DE501,Norddeutsche Steingut AG,Non-metallic mineral products,5745.0,,,DE9
+DEE0D,DELIPAPIER GmbH,Paper and printing,21049.0,80977.23,123.71,DEE
+DE141,Munksjö Dettingen GmbH,Paper and printing,6016.0,23144.04,35.35,DE2
+DEA53,Deutsche Edelstahlwerke GmbH,Iron and steel,25588.0,59777.48,,DEA
+DEA53,Stora Enso Kabel GmbH & Co. KG,Paper and printing,78585.0,302322.97,461.88,DEA
+DEA2C,Deutsche Steinzeug Cremer & Breuer AG,Non-metallic mineral products,24220.0,,,DEA
+DED52,Monier Braas GmbH,Non-metallic mineral products,7769.0,,,DEE
+DEA59,Rheinkalk Grevenbrück GmbH,Cement,56543.0,,,DEA
+DEB1B,Saint-Gobain Oberland AG,Glass,60432.0,101678.41,163.25,DEA
+DE926,Noelle + von Campe Glashütte GmbH,Glass,33742.0,56771.79,91.15,DE9
+DE722,Duktus Rohrsysteme Wetzlar GmbH,Iron and steel,34109.0,194372.29,,DEA
+DE126,SAINT-GOBAIN GLASS Deutschland GmbH,Glass,39832.0,70170.85,212.85,DE2
+DE40G,GMB Glasmanufaktur Brandenburg GmbH,Glass,39061.0,68812.6,208.73,DEE
+DE40G,Ardagh Glass GmbH,Glass,45156.0,75976.15,121.98,DEE
+DE278,Ziegelwerk Otto Staudacher GmbH & Co. KG,Non-metallic mineral products,27112.0,,,DE2
+DEB3C,Julius Glatz GmbH,Paper and printing,38356.0,147558.69,225.43,DEA
+DE939,Air Liquide Industriegase GmbH & Co. KG,Chemical industry,15683.0,,,DE9
+DEF0E,Steinbeis Papier GmbH,Paper and printing,5887.0,,34.6,DE9
+DEA1B,KLK Emmerich GmbH,Chemical industry,21500.0,,,DEA
+DEA1E,Gebr. Laumans GmbH & Co. KG,Non-metallic mineral products,6868.0,,,DEA
+DE27B,Pappenfabrik Trauchgau GmbH & Co. KG,Paper and printing,5908.0,,,DE2
+DE928,O-I GLASSPACK GmbH & Co.KG,Glass,49005.0,82452.19,132.38,DE9
+DEG07,Ziegelwerk Nordhausen Dipl. Ing. Sourell GmbH,Non-metallic mineral products,4725.0,,,DEE
+DED2D,TELUX Spezialglas GmbH,Glass,,,,DEE
+DE40F,Monier Braas GmbH,Non-metallic mineral products,11997.0,,,DEE
+DEG0I,Deutsche Foamglas GmbH,Glass,2.0,,,DEE
+DEA5A,BGH Edelstahl Siegen GmbH,Iron and steel,17778.0,41532.13,6.73,DEA
+DEA5A,BGH Edelstahl Siegen GmbH,Iron and steel,15856.0,90356.42,,DEA
+DEG0E,Thüringer Behälterglas GmbH Schleusingen,Glass,47303.0,79588.53,127.78,DEE
+DE231,Luitpoldhütte Aktiengesellschaft,Iron and steel,28971.0,165093.08,,DE2
+DE923,Ardagh Glass GmbH,Glass,17931.0,30169.37,48.43,DE9
+DEA1E,Röben Tonbaustoffe GmbH,Non-metallic mineral products,12931.0,,,DEA
+DE24A,Gerresheimer Tettau GmbH,Glass,40324.0,67846.18,108.93,DE2
+DEA12,Norske Skog Walsum GmbH,Paper and printing,9523.0,36635.76,55.97,DEA
+DEA26,Metsä Tissue GmbH,Paper and printing,9237.0,35535.5,54.29,DEA
+DEA26,Metsä Tissue GmbH,Paper and printing,89726.0,,,DEA
+DEA26,Metsä Tissue GmbH,Paper and printing,20755.0,79846.19,121.98,DEA
+DEA33,Ziegel- und Klinkerwerke Janinhoff GmbH & Co. KG,Non-metallic mineral products,8165.0,,,DEA
+DEG0H,DBW-Fiber Neuhaus GmbH,Glass,4422.0,,,DEE
+DE279,Ziegelwerk Bellenberg Wiest GmbH & Co. KG,Non-metallic mineral products,26011.0,,,DE2
+DEA16,DHC Solvent Chemie GmbH,Refineries,,,,DEA
+DEA46,Dachkeramik Meyer-Holsen GmbH,Non-metallic mineral products,6195.0,,,DEA
+DEA46,Dachkeramik Meyer-Holsen GmbH,Non-metallic mineral products,11189.0,,,DEA
+DEA43,Kerawil Tonwerk Wilhelmshöhe GmbH,Non-metallic mineral products,4439.0,,,DEA
+DEA26,Papierfabrik Niederauer Mühle GmbH,Paper and printing,,,,DEA
+DE926,Noelle + von Campe Glashütte GmbH,Glass,33264.0,,,DE9
+DEG0B,Werra Papier Wernshausen GmbH,Paper and printing,3228.0,12418.38,18.97,DEE
+DEG0B,Werra Papier Wernshausen GmbH,Paper and printing,5486.0,,,DEE
+DEG0B,Thüringer Hygiene Papier GmbH,Paper and printing,11142.0,42864.19,65.48,DEE
+DEA12,Momentive Specialty Chemicals GmbH,Chemical industry,8875.0,,,DEA
+DEA26,RA Dr. Mark Boddenberg InsV Reflex Premium Papier AG,Paper and printing,,,,DEA
+DEA26,Metsä Tissue GmbH,Paper and printing,30546.0,117512.98,179.53,DEA
+DEE0E,Steinzeug-Keramo GmbH,Non-metallic mineral products,20446.0,,,DEE
+DEA12,ArcelorMittal Hochfeld GmbH,Iron and steel,1448.0,8251.51,,DEA
+DE11D,Kraftwerks-Gesellschaft Unterkochen GmbH,Paper and printing,55507.0,213540.0,326.24,DE2
+DEA1F,Dachziegelwerke Nelskamp GmbH,Non-metallic mineral products,7958.0,,,DEA
+DEB3H,Buchmann GmbH,Paper and printing,87718.0,,,DEA
+DE266,Dachziegelwerke Nelskamp GmbH,Non-metallic mineral products,17389.0,,,DE2
+DEA57,M. Busch GmbH & Co. KG,Iron and steel,33989.0,193688.47,,DEA
+DEA52,KG Deutsche Gasrusswerke GmbH & Co.,Chemical industry,244341.0,,,DEA
+DED53,P-D Glasseiden GmbH Oschatz,Glass,10355.0,,,DEE
+DED45,Fährbrücke Papier GmbH,Paper and printing,,,,DEE
+DE40C,ArcelorMittal Eisenhüttenstadt GmbH,Cement,117430.0,,,DEE
+DEG09,CREATON AG,Non-metallic mineral products,27200.0,,,DEE
+DEE0C,Knauf Insulation GmbH,Glass,28609.0,,,DEE
+DEA16,Salzgitter Mannesmann Grobblech GmbH,Iron and steel,46534.0,265176.95,,DEA
+DED2F,Ziegelwerk Freital EDER GmbH,Non-metallic mineral products,16986.0,,,DEE
+DEA26,Papierfabrik Niederauer Mühle GmbH,Paper and printing,114801.0,441648.91,674.74,DEA
+DEB34,Woellner GmbH & Co. KG,Glass,29136.0,,,DEA
+DE300,Neukölln Spezialpapier NK GmbH & Co.KG,Paper and printing,126.0,,0.74,DEE
+DE228,RW silicium GmbH,Non-ferrous metals,112975.0,,,DE2
+DEB3C,Südzucker Aktiengesellschaft Mannheim/Ochsenfurt,Cement,124305.0,,,DEA
+DEE07,Wienerberger GmbH,Non-metallic mineral products,23419.0,,,DEE
+DE219,Ernst Ziegelwerk GmbH & Co.KG,Non-metallic mineral products,2448.0,,,DE2
+DE27C,Ziegelwerk Klosterbeuren L. Leinsing GmbH & Co. KG,Non-metallic mineral products,38508.0,,,DE2
+DE127,Monier Braas GmbH,Non-metallic mineral products,6900.0,,,DE2
+DE278,CREATON AG,Non-metallic mineral products,16296.0,,,DE2
+DE22B,Tonwerk Venus GmbH & Co. KG,Non-metallic mineral products,10784.0,,,DE2
+DE21C,Ziegelsysteme Michael Kellerer GmbH & Co. KG,Non-metallic mineral products,20614.0,,,DE2
+DE227,Leipfinger-Bader KG,Non-metallic mineral products,17141.0,,,DE2
+DE22A,Schlagmann Poroton GmbH & Co. KG,Non-metallic mineral products,39361.0,,,DE2
+DE147,Ziegelwerk Ott Deisendorf GmbH,Non-metallic mineral products,8687.0,,,DE2
+DE276,Hörl & Hartmann Ziegeltechnik GmbH & Co. KG,Non-metallic mineral products,7979.0,,,DE2
+DE275,Schlagmann Poroton GmbH & Co. KG,Non-metallic mineral products,16804.0,,,DE2
+DE235,Schlagmann Poroton GmbH & Co. KG,Non-metallic mineral products,11849.0,,,DE2
+DE94H,Klinkerwerk Neuschoo Olga Müller GmbH & Co. KG,Non-metallic mineral products,2221.0,,,DE9
+DE918,Alten Ziegelei  GmbH & Co. KG,Non-metallic mineral products,5823.0,,,DE9
+DE94E,KDW Klinkerdachziegelwerk GmbH & Co. KG,Non-metallic mineral products,4158.0,,,DE9
+DE94E,Ziegelei Hebrok Natrup-Hagen Kommanditgesellschaft,Non-metallic mineral products,7165.0,,,DE9
+DE948,"Jos. Moormann, Ziegeleigesellschaft mbH",Non-metallic mineral products,1941.0,,,DE9
+DEB3B,Ernst Jungk & Sohn GmbH,Non-metallic mineral products,33844.0,,,DEA
+DE258,Wienerberger GmbH,Non-metallic mineral products,16522.0,,,DE2
+DE91A,Nordzucker AG,Cement,59666.0,,,DE9
+DEG01,Wienerberger GmbH,Non-metallic mineral products,18909.0,,,DEE
+DE946,Röben Tonbaustoffe GmbH,Non-metallic mineral products,40254.0,,,DE9
+DE275,Ziegelwerk Peter Kormann GmbH,Non-metallic mineral products,,,,DE2

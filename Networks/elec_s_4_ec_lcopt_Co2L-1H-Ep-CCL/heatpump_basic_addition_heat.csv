@@ -1,0 +1,9 @@
+,carrier,bus,p_nom
+0,air_source_heat_pump,DE0 2,437.92
+1,air_source_heat_pump,DE0 9,274.24
+2,air_source_heat_pump,DE0 A,527.08
+3,air_source_heat_pump,DE0 E,260.95
+4,ground_source_heat_pump,DE0 2,36.49
+5,ground_source_heat_pump,DE0 9,22.85
+6,ground_source_heat_pump,DE0 A,43.92
+7,ground_source_heat_pump,DE0 E,21.75

@@ -17,6 +17,8 @@ scenario:
 # New Scenario Settings
 scenario_settings:
   agg_p_nom_limits: data/agg_p_nom_minmax.csv
+  agg_p_nom_limits_heat: data/agg_p_nom_minmax_heat.csv
+
   opts: [Co2L-Ep-24H-CCL]
   clusters: 4 # Default can be changed to (4 for Development purposes, 13 for NUTS1, 37 for NUTS2, 194 for NUTS3)
   regional_potential: 
@@ -26,12 +28,12 @@ scenario_settings:
     194: 1000
   demand_growth: 0.01
   H2_import: False
-  H2_ready: True
-  H2_ready_OPEX: True #set to True only if H2_ready is True, assign H2_Ready_support per technology
+  H2_ready: False
+  H2_ready_OPEX: False #set to True only if H2_ready is True, assign H2_Ready_support per technology
   H2_OPEX_support:
     electrolysis: -1 # support ==> reduce price, hence negative ==> local H2 production
     H2_input: -1 # support ==> reduce price, hence negative ==> H2 usage in CCGT
-  H2_ready_CAPEX: True #set to True only if H2_ready is True, assign H2_Ready_support per year
+  H2_ready_CAPEX: False #set to True only if H2_ready is True, assign H2_Ready_support per year
   H2_CAPEX_support:
     2030: 10 #GW
     2035: 10
@@ -43,7 +45,6 @@ scenario_settings:
     2030: 150
   #simillarly for co2 limit
   co2_limit: 2.3e8 
-
 
 solving:
   tmpdir: 
@@ -64,7 +65,7 @@ solving:
    method: 2 # barrier
    crossover: 0
    BarConvTol: 1.e-6
-   FeasibilityTol: 1.e-6
+   FeasibilityTol: 0.01 #1.e-6
    AggFill: 0
    PreDual: 0
    GURO_PAR_BARDENSETHRESH: 200
@@ -76,7 +77,17 @@ solving:
   #   barrier_convergetol: 1.e-5
   #   feasopt_tolerance: 1.e-6
 
-plotting:
+
+
+
+# plotting:
+#   heat_carrier_colors:
+#     AC: "#1f77b4"
+#     gas: "#ff7f0e"
+#     oil: "#9467bd"
+#     biomass: "#2ca02c"
+
+plotting:   
   map:
     figsize: [7, 7]
     boundaries: [-10.2, 29, 35,  72]
@@ -130,7 +141,7 @@ plotting:
     "gas boilers" : "#d35050"
     "gas boiler marginal" : "#d35050"
     "gas-to-power/heat" : "#d35050"
-    "gas" : "#d35050"
+    "gas" : "#ff7f0e"
     "natural gas" : "#d35050"
     "CCGT" : "#b20101"
     "CCGT marginal" : "#b20101"
@@ -164,9 +175,11 @@ plotting:
     "retrofitting" : "#e0d6a8"
     "building retrofitting" : "#e0d6a8"
     "heat pumps" : "#ff9768"
-    "heat pump" : "#ff9768"
+    "heat pump" : "#93864b"
     "air heat pump" : "#ffbea0"
+    "air source heat pump" : "#ffbea0"
     "ground heat pump" : "#ff7a3d"
+    "ground source heat pump" : "grey" #"#ff7a3d"
     "power-to-heat" : "#a59e7c"
     "power-to-gas" : "#db8585"
     "power-to-liquid" : "#a9acd1"
@@ -204,6 +217,17 @@ plotting:
     "Balance": "grey"
     "DC link" : "#8a1caf"
     "Regional" : "green"
+    "heat_pump": "#1f77b4"
+    "oil boiler": "#9467bd"
+    "oil burner": "#9467bd"
+    "biomass boiler": "#2ca02c"
+    "biomass burner": "#2ca02c"
+    "electric boiler": "#8c564b"
+    "gas boiler" : "#d35050"
+    "gas burner" : "#d35050"
+    "coal burner" : "#707070"
+    "fixed biomass boiler": "#2ca02c"
+
   nice_names:
     OCGT: "Open-Cycle Gas"
     CCGT: "Combined-Cycle Gas"
@@ -234,4 +258,10 @@ plotting:
     ror: "Run of\nriver"
     PHS: "Pumped Hydro\nStorage"
     hydro: "Reservoir\n& Dam"
-
+  # heat_colors:
+  #   heat_pump: "#1f77b4"
+  #   gas_boiler: "#ff7f0e"
+  #   oil_boiler: "#9467bd"
+  #   biomass_boiler: "#2ca02c"
+  #   electric_boiler: "#8c564b"
+  #   CHP: "#d62728"

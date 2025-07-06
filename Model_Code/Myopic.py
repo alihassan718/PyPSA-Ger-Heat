@@ -57,7 +57,7 @@ def update_cost(n,year,cost_factors,fuel_cost):
     
     #CAPEX
     
-    for tech in cost_factors.columns:
+    for tech in cost_factors.columns: #cost factor csv only contains renewables
         c=cost_factors[tech].loc[year]
         indices=[elem for elem in n.links.index if tech in elem]
         n.links.loc[indices,'capital_cost']*=c
@@ -81,7 +81,7 @@ def update_cost(n,year,cost_factors,fuel_cost):
     #     spec_year=years[z]
     
     #Fuel Cost:
-    fuels=list(fuel_cost.columns)
+    fuels=list(fuel_cost.columns) #fuel_cost.csv contains fossil fuels and H2 
 
     for tech in fuels:
         mask = (n.generators.carrier == tech) | (n.generators.carrier == f"imports_{tech}")
@@ -100,6 +100,13 @@ def update_cost(n,year,cost_factors,fuel_cost):
             old_cost=fuel_cost.loc[year-1,tech]/eff
             new_cost=fuel_cost.loc[year,tech]/eff
             n.generators.loc[mask, 'marginal_cost'] += (new_cost - old_cost)
+            
+
+"""there is a problem with thin whole function, for example, up in the mask for generators it shoould
+   pick up the generators whos carrier are fossils, but it's only picking up the H2_import whose carrier
+   is H2, yes its there in fuel_cost.
+"""
+
 
 def update_co2price(n,year,co2price):
     """Updates generator marginal costs based on CO2 price changes for a specified year.
@@ -131,6 +138,7 @@ def update_co2price(n,year,co2price):
             val=dif* n.carriers.loc[carrier].co2_emissions /\
                 n.generators.loc[n.generators.carrier==carrier,'efficiency'].mean()
             n.generators.loc[n.generators.carrier==carrier,'marginal_cost']+=val
+  
 
 def update_co2limit(n, new_lim):
     """ Updates the CO2 emission limit for the network.
@@ -175,7 +183,7 @@ def delete_old_gens(n,year,base):
             if wanted.index[i].split()[-1] =='import':
                 continue
             if wanted.index[i].split()[-1] in ['biomass','ror']:
-                n.generators.loc[n.generators.index == wanted.index[i],'p_nom_max'] =+ wanted[i]
+                n.generators.loc[n.generators.index == wanted.index[i],'p_nom_max'] += wanted[i]
                 val= n.generators.loc['Fixed ' + wanted.index[i],'p_nom'] - wanted[i]
                 if val >= 0 :
                     n.generators.loc['Fixed ' + wanted.index[i],'p_nom']= val
@@ -371,6 +379,7 @@ def update_const_lines(n,year,df_H):
     return pd.concat([df_H,temp])
 
 def Yearly_potential(n,saved_potential,regional_potential,agg_p_nom_minmax):
+    
     """ Adjusts the yearly potential for generator capacities and updates the network accordingly.
 
     This function reduces the available capacity (saved_potential) for extendable generators based on their optimized capacity.
@@ -391,7 +400,6 @@ def Yearly_potential(n,saved_potential,regional_potential,agg_p_nom_minmax):
     pd.Series
         Updated series of saved potentials after adjustments.
         """
-    
     for i in n.generators.index[n.generators.p_nom_extendable==True]:
 
         if i.split()[-1] =='import':
@@ -421,27 +429,80 @@ def Yearly_potential(n,saved_potential,regional_potential,agg_p_nom_minmax):
         yp=agg_p_nom_minmax.loc['battery','max']
         n.storage_units.p_nom_max.loc[i]=regional_potential# yp/l_b*1.5 ##Rp for batteries
     return saved_potential
+   
 
-def append_gens(n,year,df):
-    """ Appends new generators and links with their capacities and lifetimes to the tracking DataFrame.
 
-    This function identifies extendable generators and CCGT/OCGT links in the network, calculates their optimized capacities,
-    and determines their expected lifetimes. It then appends this information to the provided DataFrame.
 
-    Parameters:
-    -----------
-    n : Network
-        The network object containing the generators and links.
-    year : int
-        The current year, used to calculate the removal year of the components.
-    df : pd.DataFrame
-        The DataFrame to which the new generator and link information will be appended.
+# def update_heat_potential(n, saved_potential_heat, agg_p_nom_minmax_heat):
+#     """
+#     Updates yearly p_nom_max for heating technologies using global and regional limits.
+#     Applies only to technologies listed in agg_p_nom_minmax_heat.
 
-    Returns:
-    --------
-    pd.DataFrame
-        The updated DataFrame with the appended generators and links.
-    """
+#     Parameters
+#     ----------
+#     n : pypsa.Network
+#         The PyPSA network object.
+
+#     saved_potential_heat : pd.Series
+#         Remaining potential per link name from previous years.
+
+#     agg_p_nom_minmax_heat : pd.DataFrame
+#         Max total capacity ('max') per technology (index = carrier).
+#     """
+
+#     # Regional build caps per year (hardcoded)
+#     regional_potential_heat = {
+#         "biomass_burner": 2455.11,
+#         "heat_pump": 1227.55,
+#         "solar_thermal": 1227.55,
+#     }
+
+#     # Identify all heat-related links
+#     heating_links = [
+#         name for name, row in n.links.iterrows()
+#         if "heat" in str(row.get("bus1", "")) or "heat" in str(row.get("bus2", ""))
+#     ]
+
+#     # Initialize infinite potentials from CSV-defined global cap
+#     for i in heating_links:
+#         if i not in saved_potential_heat:
+#             continue
+#         tech = n.links.at[i, "carrier"]
+#         if tech not in agg_p_nom_minmax_heat.index:
+#             continue  # ⛔ Skip fossils/unconstrained techs
+#         if np.isinf(saved_potential_heat[i]):
+#             saved_potential_heat[i] = agg_p_nom_minmax_heat["max"].get(tech, np.inf)
+
+#     # Apply annual capacity limits
+#     for i in n.links.index[n.links.p_nom_extendable == True]:
+#         if i not in heating_links or i not in saved_potential_heat:
+#             continue
+#         tech = n.links.at[i, "carrier"]
+#         if tech not in agg_p_nom_minmax_heat.index:
+#             continue
+
+#         used_capacity = n.links.at[i, "p_nom_opt"]
+#         saved_potential_heat[i] -= used_capacity
+
+#         tech_limit = agg_p_nom_minmax_heat["max"].get(tech, np.inf)
+#         regional_limit = regional_potential_heat.get(tech, np.inf)
+
+#         cap_this_year = min(saved_potential_heat[i], regional_limit, tech_limit)
+#         n.links.at[i, "p_nom_max"] = max(cap_this_year, 0)
+
+#     # Final check: zero out if depleted
+#     for i in saved_potential_heat.index:
+#         if saved_potential_heat[i] <= 1 and i in heating_links:
+#             n.links.at[i, 'p_nom_max'] = 0
+#             saved_potential_heat[i] = 0
+
+#     return saved_potential_heat
+
+
+
+
+def append_gens(n, year, df):
+    """Track new generators and CCGT/OCGT links with p_nom_opt and removal year."""
 
     idx=[]
     bus=[]
@@ -451,8 +512,10 @@ def append_gens(n,year,df):
                                     'offwind-dc','onwind','solar','ror','biomass'],
                          'life':[30,30,25,25,25,25,80,30]})
     for i in n.generators[n.generators.p_nom_extendable==True].index:
+        
         if i.split()[-1] == 'import':
             continue
+
         if i.split()[-1] not in ['biomass','ror']:
             idx.append(i)
             bus.append(n.generators.loc[i,'bus'])
@@ -550,7 +613,7 @@ def initial_storage(n):
     n.storage_units.state_of_charge_initial=initial
 
 
-def delete_gens(n,year,df,saved_potential,regional_potential):
+def delete_gens(n,year,df,saved_potential,regional_potential): #not dealing with biomass and gas
     """ Reduces or removes generator capacities in the network based on a specified year.
 
     This function identifies generators and links scheduled for removal or capacity reduction in the given year

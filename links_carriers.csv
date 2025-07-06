@@ -1,0 +1,45 @@
+Link,carrier
+T10,False
+T11,False
+T18,False
+T20,False
+DE0 2 CCGT,False
+DE0 2 OCGT,False
+DE0 9 CCGT,False
+DE0 9 OCGT,False
+DE0 A CCGT,False
+DE0 A OCGT,False
+DE0 E CCGT,False
+DE0 E OCGT,False
+DE0 2 Gas_input,False
+DE0 2 H2_input,False
+DE0 2 electrolysis,False
+DE0 2 fuel cell,False
+DE0 9 Gas_input,False
+DE0 9 H2_input,False
+DE0 9 electrolysis,False
+DE0 9 fuel cell,False
+DE0 A Gas_input,False
+DE0 A H2_input,False
+DE0 A electrolysis,False
+DE0 A fuel cell,False
+DE0 E Gas_input,False
+DE0 E H2_input,False
+DE0 E electrolysis,False
+DE0 E fuel cell,False
+DE0 9 oil_boiler,False
+DE0 A oil_boiler,False
+DE0 2 oil_boiler,False
+DE0 E oil_boiler,False
+DE0 9 heat_pump,False
+DE0 A heat_pump,False
+DE0 2 heat_pump,False
+DE0 E heat_pump,False
+DE0 9 biomass_boiler,False
+DE0 A biomass_boiler,False
+DE0 2 biomass_boiler,False
+DE0 E biomass_boiler,False
+DE0 9 gas_boiler,False
+DE0 A gas_boiler,False
+DE0 2 gas_boiler,False
+DE0 E gas_boiler,False

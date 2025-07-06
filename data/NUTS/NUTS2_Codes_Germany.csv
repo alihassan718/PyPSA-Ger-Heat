@@ -1,0 +1,39 @@
+NUTS2_Code,Region,Bundesland,,scaled to 536,,residential hotmaps 650,NUTS,Name,Bus,industry,scaled to 510,CO2,,,Cooling density total,,,,Heat density total,,,,,,Cooling density total,,,,,,Cooling density total
+DE11,Stuttgart,Baden-Württemberg,,,,,DE5,Bremen,DE9,40878.20307,"93,190.70","19521599.00;""t/yr""",,,"indicator;""value"";""unit""",,,,"indicator;""value"";""unit""",,,,,,"indicator;""value"";""unit""",,,,,,"indicator;""value"";""unit"""
+DE12,Karlsruhe,Baden-Württemberg,,98057.99888,,92612.69597,DE6,Hamburg,DE9,,,,,,"Theoretical cooling needs total;""32768.72695"";""GWh/yr""",,,cluster - 1,"Heat demand total;""133491.89885"";""GWh/yr""",,,,cluster 4,berlin,"Theoretical cooling needs total;""15850.292720000001"";""GWh/yr""",,,,cluster 3,badenwurttemburg,"Theoretical cooling needs total;""26034.04535"";""GWh/yr"""
+DE13,Freiburg,Baden-Württemberg,,,,,DE9,Niedersachsen,DE9,,,,,,"Counted Cells;""1625881"";""cells""",,,bremen,"Counted Cells;""919462"";""cells""",,,,,,"Counted Cells;""1115142"";""cells""",,,,,,"Counted Cells;""1629164"";""cells"""
+DE14,Tübingen,Baden-Württemberg,,,,,DE8,Mecklenburg-Vorpommern,DE9,,,,,,"Cooling density min;""0"";""MWh/(ha*yr)""",,,,"Heat density min;""0"";""MWh/(ha*yr)""",,,,,,"Cooling density min;""0"";""MWh/(ha*yr)""",,,,,,"Cooling density min;""0"";""MWh/(ha*yr)"""
+DE21,Oberbayern,Bayern,,,,,DEF,Schleswig-Holstein,DE9,,,,,,"Cooling density max;""577.29"";""MWh/(ha*yr)""",,,,"Heat density max;""3221.33"";""MWh/(ha*yr)""",,,,,,"Cooling density max;""616.70"";""MWh/(ha*yr)""",,,,,,"Cooling density max;""642.27"";""MWh/(ha*yr)"""
+DE22,Niederbayern,Bayern,,,,176776.6265,DE7,Hessen,DEA,79791.66199,"181,902.35","60084172.00"";""t/yr""",,,"Average cooling density;""20.1546349210059039"";""MWh/(ha*yr)""",,,,"Average heat density;""145.1846213764135984"";""MWh/(ha*yr)""",,,,,,"Average cooling density;""14.2138788244008386"";""MWh/(ha*yr)""",,,,,,"Average cooling density;""15.9803534941847475"";""MWh/(ha*yr)"""
+DE23,Oberpfalz,Bayern,,187170.4744,,,DEA,Nordrhein-Westfalen,DEA,,,,,cluster 2,,,,,,,,,,,,,,,,,
+DE24,Oberfranken,Bayern,,,,,DEB,Rheinland-Pfalz,DEA,,,,,,Heat density total,,,,Cooling density total,,,,,,Heat density total,,,,,,Heat density total
+DE25,Mittelfranken,Bayern,,,,,DEC,Saarland,DEA,,,,,,"indicator;""value"";""unit""",,,,"indicator;""value"";""unit""",,,,,,"indicator;""value"";""unit""",,,,,,"indicator;""value"";""unit"""
+DE26,Unterfranken,Bayern,,155122.908,,146508.7079,DE1,Baden-W�rttemberg,DE2,66657.42385,"151,960.01","19834246.00"";""t/yr""",,,"Heat demand total;""256568.28842"";""GWh/yr""",,,,"Theoretical cooling needs total;""10777.35281"";""GWh/yr""",,,,,,"Heat demand total;""127021.82734"";""GWh/yr""",,,,,,"Heat demand total;""213166.13204"";""GWh/yr"""
+DE27,Schwaben,Bayern,,,,,DE2,Bayern,DE2,,,,,,"Counted Cells;""1405130"";""cells""",,,,"Counted Cells;""1205969"";""cells""",,,,,,"Counted Cells;""888523"";""cells""",,,,,,"Counted Cells;""1321751"";""cells"""
+DE30,Berlin,Berlin,,,,,DE3,Berlin,DEE,36384.76504,"82,946.94","21587107.00"";""t/yr""",,,"Heat density min;""0"";""MWh/(ha*yr)""",,,,"Cooling density min;""0"";""MWh/(ha*yr)""",,,,,,"Heat density min;""0"";""MWh/(ha*yr)""",,,,,,"Heat density min;""0"";""MWh/(ha*yr)"""
+DE40,Brandenburg,Brandenburg,,95648.61867,,90337.11213,DE4,Brandenburg,DEE,,,,,,"Heat density max;""5330.76"";""MWh/(ha*yr)""",,,,"Cooling density max;""295.78"";""MWh/(ha*yr)""",,,,,,"Heat density max;""4242.09"";""MWh/(ha*yr)""",,,,,,"Heat density max;""4416.60"";""MWh/(ha*yr)"""
+DE50,Bremen,Bremen,,,,,DED,Sachsen,DEE,,,,,,"Average heat density;""182.5939655903724211"";""MWh/(ha*yr)""",,,,"Average cooling density;""8.9367531669553695"";""MWh/(ha*yr)""",,,,,,"Average heat density;""142.9584395001592531"";""MWh/(ha*yr)""",,,,,,"Average heat density;""161.2753827385036970"";""MWh/(ha*yr)"""
+DE60,Hamburg,Hamburg,,,,,DEE,Sachsen-Anhalt,DEE,,,,,,,,,,,,,,,,,,,,,,
+DE71,Darmstadt,Hessen,,,,,DEG,Th�ringen,DEE,,,,,,Heat density residential sector,,,,Heat density residential sector,,,,,,Heat density residential sector,,,,,,Heat density residential sector
+DE72,Gießen,Hessen,,,,,,,,,,,,,"indicator;""value"";""unit""",,,,"indicator;""value"";""unit""",,,,,,"indicator;""value"";""unit""",,,,,,"indicator;""value"";""unit"""
+DE73,Kassel,Hessen,,,,,,,,,,,,,"Heat demand total;""176776.62644999998"";""GWh/yr""",,,,"Heat demand total;""92613.69597"";""GWh/yr""",,,,,,"Heat demand total;""90337.11213"";""GWh/yr""",,,,,,"Heat demand total;""146508.7079"";""GWh/yr"""
+DE80,Mecklenburg-Vorpommern,Mecklenburg-Vorpommern,,,,,,,,,,,,,"Counted Cells;""1405130"";""cells""",,,,"Counted Cells;""919462"";""cells""",,,,,,"Counted Cells;""888523"";""cells""",,,,,,"Counted Cells;""1321751"";""cells"""
+DE91,Braunschweig,Niedersachsen,,,,,,,,,,,,,"Average heat density;""125.8080836506230740"";""MWh/(ha*yr)""",,,,"Average heat density;""100.7256154577350668"";""MWh/(ha*yr)""",,,,,,"Average heat density;""101.6708432871180600"";""MWh/(ha*yr)""",,,,,,"Average heat density;""110.8444547271006415"";""MWh/(ha*yr)"""
+DE92,Hannover,Niedersachsen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+DE93,Lüneburg,Niedersachsen,,,,,,,,,,,,,Heat density non-residential sector,,,,Heat density non-residential sector,,,,,,Heat density non-residential sector,,,,,,Heat density non-residential sector
+DE94,Weser-Ems,Niedersachsen,,,,,,,,,,,,,"indicator;""value"";""unit""",,,,"indicator;""value"";""unit""",,,,,,"indicator;""value"";""unit""",,,,,,"indicator;""value"";""unit"""
+DEA1,Düsseldorf,Nordrhein-Westfalen,,,,,,,,,,,,,"Heat demand total;""79791.66199"";""GWh/yr""",,,,"Heat demand total;""40878.20307"";""GWh/yr""",,,,,,"Heat demand total;""36684.71504"";""GWh/yr""",,,,,,"Heat demand total;""66657.42385"";""GWh/yr"""
+DEA2,Köln,Nordrhein-Westfalen,,,,,,,,,,,,,"Counted Cells;""1405130"";""cells""",,,,"Counted Cells;""919462"";""cells""",,,,,,"Counted Cells;""888523"";""cells""",,,,,,"Counted Cells;""1321751"";""cells"""
+DEA3,Münster,Nordrhein-Westfalen,,,,,,,,,,,,,"Average heat density;""56.7860385515930910"";""MWh/(ha*yr)""",,,,"Average heat density;""44.4585368835253659"";""MWh/(ha*yr)""",,,,,,"Average heat density;""41.2876416367387226"";""MWh/(ha*yr)""",,,,,,"Average heat density;""50.4310985125034897"";""MWh/(ha*yr)"""
+DEA4,Detmold,Nordrhein-Westfalen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+DEA5,Arnsberg,Nordrhein-Westfalen,,,,,,,,,,,,,Industrial Sites Emissions,,,,Industrial Sites Emissions,,,,,,Industrial Sites Emissions,,,,,,Industrial Sites Emissions
+DEB1,Koblenz,Rheinland-Pfalz,,,,,,,,,,,,,"indicator;""value"";""unit""",,,,"indicator;""value"";""unit""",,,,,,"indicator;""value"";""unit""",,,,,,"indicator;""value"";""unit"""
+DEB2,Trier,Rheinland-Pfalz,,,,,,,,,,,,,"CO? emissions of energy intensive industries;""60084172.00"";""t/yr""",,,,"CO? emissions of energy intensive industries;""19521599.00"";""t/yr""",,,,,,"CO? emissions of energy intensive industries;""21587107.00"";""t/yr""",,,,,,"CO? emissions of energy intensive industries;""19834246.00"";""t/yr"""
+DEB3,Rheinhessen-Pfalz,Rheinland-Pfalz,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+DEC0,Saarland,Saarland,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+DED2,Dresden,Sachsen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+DED4,Chemnitz,Sachsen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+DED5,Leipzig,Sachsen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+DEE0,Sachsen-Anhalt,Sachsen-Anhalt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+DEF0,Schleswig-Holstein,Schleswig-Holstein,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+DEG0,Thüringen,Thüringen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

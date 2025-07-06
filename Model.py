@@ -36,6 +36,9 @@ import Model_Code.base_functions as bf
 import Model_Code.Myopic as mp
 import Model_Code.plotting as pt
 import Model_Code.H2_Ready as H2R
+import Model_Code.heat_sector as hs
+
+
 
 from Model_Code.Constraints import extra_functionality
 warnings.filterwarnings("ignore")
@@ -60,8 +63,10 @@ def main():
 
     #extract scenario settings
     scenario_settings = config.get("scenario_settings", {})
-    print('enter clusters')
-    clusters = int(input())    # default to 4 if not alligned with NUTS
+    
+    # clusters = int(input('Enter Clusters:'))    # default to 4 if not alligned with NUTS
+    print('🐥 Taking 4 clusters as default ✅')
+    clusters = int(4)
     clusters = clusters if clusters in [4,13,37,194] else \
         scenario_settings.get("clusters")
     regional_potential = scenario_settings.get("regional_potential")[clusters]
@@ -99,10 +104,32 @@ def main():
     cost_factors = pd.read_csv(os.path.join("data", "Cost_Factor.csv"), index_col=0, header=0)
     fuel_cost = pd.read_csv(os.path.join("data", "fuel_cost.csv"), index_col=0, header=0)
     co2price = pd.read_csv(os.path.join("data", "co2_price.csv"), index_col=0)
-
+    
+    # Load heat data
+    heat_demand_df= pd.read_csv(os.path.join("data", "residential_heat_demand.csv"), index_col="snapshot", parse_dates=True)
+    removal_biomass_df = pd.read_csv(os.path.join("Networks\elec_s_4_ec_lcopt_Co2L-1H-Ep-CCL", "biomass_basic_removal_heat.csv"))
+    biomass_basic_addition_heat = pd.read_csv(os.path.join("Networks\elec_s_4_ec_lcopt_Co2L-1H-Ep-CCL", "biomass_basic_addition_heat.csv"), index_col=0)
+    # For gas
+    removal_gas_df = pd.read_csv(os.path.join("Networks\elec_s_4_ec_lcopt_Co2L-1H-Ep-CCL", "gas_basic_removal_heat.csv"))
+    gas_basic_addition_heat = pd.read_csv(os.path.join("Networks\elec_s_4_ec_lcopt_Co2L-1H-Ep-CCL", "gas_basic_addition_heat.csv"), index_col=0)
+    #For oil
+    oil_basic_addition_heat = pd.read_csv(os.path.join("Networks\elec_s_4_ec_lcopt_Co2L-1H-Ep-CCL", "oil_basic_addition_heat.csv"), index_col=0)
+    removal_oil_df = pd.read_csv(os.path.join("Networks\elec_s_4_ec_lcopt_Co2L-1H-Ep-CCL", "oil_basic_removal_heat.csv"))
+    #For HP
+    hp_basic_addition_heat = pd.read_csv(os.path.join("Networks\elec_s_4_ec_lcopt_Co2L-1H-Ep-CCL", "heatpump_basic_addition_heat.csv"), index_col=0)
+    removal_hp_df = pd.read_csv(os.path.join("Networks\elec_s_4_ec_lcopt_Co2L-1H-Ep-CCL", "heatpump_basic_removal_heat.csv"))
+    #For solar_thermal
+    solar_thermal_basic_addition_heat = pd.read_csv(os.path.join("Networks\elec_s_4_ec_lcopt_Co2L-1H-Ep-CCL", "solar_thermal_basic_addition_heat.csv"), index_col=0)
+    removal_solar_thermal_df = pd.read_csv(os.path.join("Networks\elec_s_4_ec_lcopt_Co2L-1H-Ep-CCL", "solar_thermal_basic_removal_heat.csv"))
+    
+    
     # Additional data to store scenario settings
+    
+ 
     agg_p_nom_minmax = pd.read_csv(config['scenario_settings']\
                                    .get('agg_p_nom_limits'), index_col=1)
+
+
     co2030 = (1 - (co2lims[co2lims.year == 2030].co2limit.values[0] / (460 * 10**6))) * 100
     co2040 = (1 - (co2lims[co2lims.year == 2040].co2limit.values[0] / (460 * 10**6))) * 100
     co2045 = (1 - (co2lims[co2lims.year == 2045].co2limit.values[0] / (460 * 10**6))) * 100
@@ -125,7 +152,7 @@ def main():
 
     # Read or create removal data (conventional, RES, biomass, coal, etc.)
     def read_data(n, folder_name):
-        conventional_base = dp.Base_Removal_Data(n,folder_name)
+        conventional_base = dp.Base_Removal_Data(n, folder_name)
 
         if os.path.exists(f"{folder_name}/res_basic_removal.csv"):
             RES_base_remove = pd.read_csv(f"{folder_name}/res_basic_removal.csv", index_col=0)
@@ -165,7 +192,8 @@ def main():
         removal_data[removal_data.carrier=='offwind-dc']
     ])
     
-    
+    # Add carrier electricity to demands
+    n.loads['carrier'] = 'electricity' 
 
     # Convert the network to a baseline:
     df = bf.convert_opt_to_conv(n, 2020, RES_base_addition, name=name, fuel_cost=fuel_cost)
@@ -205,8 +233,16 @@ def main():
     n.storage_units.cyclic_state_of_charge = False
 
     # Manage Regional and Yearly potential
-    saved_potential = n.generators.p_nom_max[n.generators.p_nom_extendable == True]
-    saved_potential = mp.Yearly_potential(n, saved_potential, regional_potential,agg_p_nom_minmax=agg_p_nom_minmax)
+    saved_potential = n.generators.p_nom_max[(n.generators.p_nom_extendable == True)]
+
+
+    saved_potential = mp.Yearly_potential(n, saved_potential, regional_potential, agg_p_nom_minmax=agg_p_nom_minmax)
+    
+    ######################################################################################################################
+    #updating heat potential
+    # saved_potential_heat = n.links.p_nom_max[n.links.p_nom_extendable == True].copy()
+    # saved_potential_heat = mp.update_heat_potential(n, saved_potential_heat, agg_p_nom_minmax_heat=agg_p_nom_minmax_heat)
+    #####################################################################################################################
 
     # Store constraints for store e_max ==> empty at last snapshot
     p_max_pu_store = pd.DataFrame(1, index=n.snapshots, columns=n.stores.index)
@@ -237,44 +273,82 @@ def main():
                                           .get('H2_OPEX_support')[tech],
                                           element=tech)
 
+    
+########################################################################################
+
+    # Add heating sector
+    hs.init_heating_sector(n, heat_demand_df)
+    hs.add_biomass_boilers(n, heat_demand_df=heat_demand_df, fuel_cost=fuel_cost, biomass_addition_df=biomass_basic_addition_heat)
+    hs.add_gas_boilers(n, heat_demand_df=heat_demand_df, fuel_cost=fuel_cost, gas_addition_df=gas_basic_addition_heat)
+    hs.add_oil_boilers(n, heat_demand_df=heat_demand_df, fuel_cost=fuel_cost, oil_addition_df=oil_basic_addition_heat)
+    hs.add_heat_pumps(n, heat_demand_df=heat_demand_df, heatpump_addition_df=hp_basic_addition_heat)
+    hs.add_solar_thermal(n, heat_demand_df=heat_demand_df, solar_addition_df=solar_thermal_basic_addition_heat)
+
+
+##############################################################################################
+
+
     # Solve network for 2020 
     n.config = config
     n.opts = opts
-    config["year"] = 2020
+    config["year"] = 2020 
 
-    n.lopf(solver_name=solver_options['name'],
+
+    solver_name = solver_options.pop('name')
+    n.lopf(solver_name=solver_name,
            solver_options=solver_options,
            extra_functionality=extra_functionality,
            solver_dir=tmpdir)
-
+    
     df = mp.append_gens(n, year=2020, df=df)
     mp.initial_storage(n)
-
+    
     # Prepare to track potential changes in subsequent years
     years_cols = list(range(2021, 2051))
     Potentials_over_years = pd.DataFrame({"2020": saved_potential})
     Potentials_over_years = Potentials_over_years.reindex(columns=Potentials_over_years.columns.tolist() + years_cols)
+    
+    #####################################################################################################
+    hs.update_fixed_biomass_boilers(n)
 
+    #to track the yearly potential heating technologies same as above:
+    # Potentials_over_years_heat = pd.DataFrame({"2020": saved_potential_heat})
+    # Potentials_over_years_heat = Potentials_over_years_heat.reindex(columns=Potentials_over_years_heat.columns.tolist() + years_cols)
+    
+    #####################################################################################################
 
+    # ✅✅✅✅✅✅✅✅✅
+    for i in range(2021, 2035):
 
-    # The iterative optimization for 2021 to 2031, e.g. (adapt as needed):
-    for i in range(2021, 2051):
-
-        # Update lines, gens, stor
+        # Update lines, gens, store
         df_H2 = mp.update_const_lines(n, i, df_H2)
         mp.update_const_gens(n)
         mp.update_const_storage(n)
         df_stor, df_H2_store = mp.append_storages(n, i, df_stor, df_H2_store)
+        
+        #🐦 for now for biomass: Updating marignal cost of links marginal cost from fuel_cost csv
+        hs.update_link_costs(n, year=i, fuel_cost=fuel_cost)
+        # 🔁 Add previously built heating links (fixed)
 
         # Some plotting or tracking
         pt.installed_capacities(n, year=i-1, clusters=clusters,colors=colors)
-        pt.Country_Map(n, year=i-1, config=config, clusters=clusters)
+        # pt.Country_Map(n, year=i-1, config=config, clusters=clusters)
         ren_perc.append(pt.pie_chart(n, i-1,clusters=clusters,colors=colors))
 
+        ############################################################################################
+        #  Heat sector plots
+        pt.pie_chart_heat_capacity(n, year=i-1, clusters=clusters, colors=colors)
+        pt.plot_heating_supply_shares(n, year=i-1, clusters=clusters, colors=colors)
+        # pt.plot_fossil_vs_electric_heating(n, year=i-1, clusters=clusters)
+
+
+        #############################################################################################
+
+
         # Track renewable percentage
-        gen_bar = pt.Gen_Bar(n, gen_bar, i-1)
-        inst_bar = pt.Inst_Bar(n, inst_bar, i-1)
-        store_bar = pt.storage_installation(n, store_bar, i-1)
+        #gen_bar = pt.Gen_Bar(n, gen_bar, i-1)
+        #inst_bar = pt.Inst_Bar(n, inst_bar, i-1)
+        #store_bar = pt.storage_installation(n, store_bar, i-1)
 
         n.export_to_netcdf(f"Results/{str(clusters)}/{i-1}.nc")
         # Remove or reduce capacity for coal & lignite
@@ -306,25 +380,50 @@ def main():
         mp.delete_original_RES(n, i, renewables, saved_potential, regional_potential)
         mp.delete_storage(n, i, df_stor, df_H2, df_H2_store)
         mp.delete_old_gens(n, i, conventional_base)
+       
 
         n.lines.s_max_pu = 1.0
         mp.update_co2limit(n, int(co2lims.co2limit[co2lims.year==i]))
         mp.update_co2price(n, year=i, co2price=co2price)
-
+        
+###########################################################
+        bf.fix_efficiency2(n) #Adding efficiency2 for ccgt
+###########################################################
         config["year"] = i
         n.config = config
-        n.lopf(solver_name=solver_options['name'],
+        
+        logger.info(f"Starting LOPF for year {i}")
+        
+        n.lopf(solver_name=solver_name,
                solver_options=solver_options,
                extra_functionality=extra_functionality,
                solver_dir=tmpdir)
         
+        logger.info(f"✨✨Completed LOPF for year {i}✨✨")
+        
         mp.initial_storage(n)
-        saved_potential = mp.Yearly_potential(n, saved_potential, 
-                                              regional_potential,
-                                              agg_p_nom_minmax)
+        saved_potential = mp.Yearly_potential(n, saved_potential, regional_potential, agg_p_nom_minmax)
         Potentials_over_years.loc[:, i] = saved_potential
 
         df = mp.append_gens(n, i, df)
+        
+        ###############################################################################################
+ 
+        # shift p_nom_opt of biomass boiler to fixed_biomass boiler
+        hs.update_fixed_biomass_boilers(n)
+        # remove expired ones
+        hs.remove_expired_biomass_boilers(n, year=i, removal_biomass_df=removal_biomass_df)
+        hs.remove_expired_gas_boilers(n, year=i, removal_gas_df=removal_gas_df)
+        hs.remove_expired_oil_boilers(n, year=i, removal_oil_df=removal_oil_df)
+        hs.remove_expired_heatpumps(n, year=i, removal_hp_df=removal_hp_df)
+        hs.remove_expired_solar_thermal(n, year=i, removal_solar_thermal_df=removal_solar_thermal_df)
+        
+        # updating heat sector saved yearly and regional potential
+        # saved_potential_heat = mp.update_heat_potential(n, saved_potential_heat, agg_p_nom_minmax_heat)
+        # Potentials_over_years_heat.loc[:, i] = saved_potential_heat
+
+        ###############################################################################################
+        
 
     # 10) Final updates after the myopic optimization
     mp.update_const_lines(n, i, df_H2)
@@ -334,22 +433,33 @@ def main():
 
     pt.installed_capacities(n, year=i,clusters=clusters, colors=colors)
     ren_perc.append(pt.pie_chart(n, i,clusters=clusters,colors=colors))
-    pt.Country_Map(n, year=i, config=config, clusters=clusters)
+    #pt.Country_Map(n, year=i, config=config, clusters=clusters)
+    
+    #############################################################
 
-    gen_bar = pt.Gen_Bar(n, gen_bar, i)
-    inst_bar = pt.Inst_Bar(n, inst_bar, i)
-    pt.storage_installation(n, store_bar, i)
+    pt.pie_chart_heat_capacity(n, year=i, clusters=clusters, colors=colors)
+    pt.plot_heating_supply_shares(n, year=i, clusters=clusters, colors=colors)
+    # pt.plot_fossil_vs_electric_heating(n, year=i-1, clusters=clusters)
+    #################################################################
+    #gen_bar = pt.Gen_Bar(n, gen_bar, i)
+    #inst_bar = pt.Inst_Bar(n, inst_bar, i)
+    #pt.storage_installation(n, store_bar, i)
 
-    pt.Bar_to_PNG(gen_bar, bus_folder, "Generation",colors=colors)
-    pt.Bar_to_PNG(inst_bar, bus_folder, "Installation",colors=colors)
-    pt.Storage_Bar(store_bar, bus_folder,colors=colors)
+    #pt.Bar_to_PNG(gen_bar, bus_folder, "Generation",colors=colors)
+    #pt.Bar_to_PNG(inst_bar, bus_folder, "Installation",colors=colors)
+    #pt.Storage_Bar(store_bar, bus_folder,colors=colors)
 
     n.export_to_netcdf(f"{bus_folder}/{i}.nc")
     df.to_excel(f"{bus_folder}/addition.xlsx", index=True)
 
-    Potentials_over_years.to_excel(f"{bus_folder}/Potentials_over_years.xlsx", index=True)
+    # Potentials_over_years.to_excel(f"{bus_folder}/Potentials_over_years.xlsx", index=True)
+    # Potentials_over_years_heat.to_excel(f"{bus_folder}/heating_potentials_over_years.xlsx", index=True)
 
-    logger.info("Model run completed successfully.")
+
+    #n.export_to_netcdf('Results/final_network_with_heating.nc')
+    print('saved')
+    logger.info("✨ Model run completed successfully.✨")
           
 if __name__ == "__main__":
     main()
+

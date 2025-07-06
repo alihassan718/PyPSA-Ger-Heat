@@ -188,7 +188,23 @@ def H2_ready(n,year,fuel_cost):
     df_H2.loc[indices,'year_removed']+=20
     return df_H2,df_store
 
-def convert_opt_to_conv(n,year,res_add,name, fuel_cost):
+
+###############################################################################################
+def fix_efficiency2(n, default=1.0):
+    """
+    Ensures `efficiency2` is available in `n.links_t` for PyPSA to run LOPF.
+    """
+    if "efficiency2" not in n.links_t:
+        n.links_t["efficiency2"] = pd.DataFrame(
+            {col: n.links.at[col, "efficiency2"] if "efficiency2" in n.links.columns else default
+             for col in n.links.index},
+            index=n.snapshots
+        )
+###############################################################################################
+
+
+
+def convert_opt_to_conv(n,year,res_add, name, fuel_cost):
     """ Converts extendable generators in the network to conventional generators with fixed capacities.
 
     This function adds gas infrastructure, adjusts the capacities of renewable and conventional generators, 
@@ -271,41 +287,95 @@ def convert_opt_to_conv(n,year,res_add,name, fuel_cost):
                       efficiency=g.efficiency[0], p_min_pu=0, p_max_pu=y2)
                 n.generators.loc["Fixed " + idx[i],'weight']=g.weight[0]
                 n.generators_t.p["Fixed " + idx[i]]=0
+                
+                """
+following block replaces existing generators with links for CCGT and OCGT technologies. 
+CCGT links are modeled as 3-bus links (electricity and heat outputs), 
+while OCGT links remain 2-bus (electricity only). 
+It first tries to use actual generator data; if unavailable, it uses fallback defaults. with OCGT excluded from heat contributions.
+"""
 
+                
     for bus in n.buses.index[n.buses.carrier=='AC']:
-        for tech in ['CCGT','OCGT']:
+        for tech in ['CCGT', 'OCGT']:
             if bus + ' ' + tech in c.index:
-                Value=c.loc[bus + ' ' + tech,'p_nom']
+                Value = c.loc[bus + ' ' + tech, 'p_nom']
             else:
-                Value=0
-
+                Value = 0
+    
+            #############################################################
+            # Extend Link component attributes (only once per run)
+            if "bus2" not in n.component_attrs["Link"].index:
+                n.component_attrs["Link"].loc["bus2"] = [
+                    "string", None, None, "Name of third bus (heat) to which link is attached", "Input (optional)"
+                ]
+    
+            if "efficiency2" not in n.component_attrs["Link"].index:
+                n.component_attrs["Link"].loc["efficiency2"] = [
+                    "static or series", "per unit", 1, "Efficiency of heat output", "Input (optional)"
+                ]
+    
+            if "p2" not in n.component_attrs["Link"].index:
+                n.component_attrs["Link"].loc["p2"] = [
+                    "series", "MW", 0, "Active power at bus2 (heat)", "Output"
+                ]
+            #############################################################
+    
             try:
-                g=n.generators.loc[(n.generators.bus== bus)
-                                   &
-                                   (n.generators.carrier==tech)]
-                n.remove('Generator',bus + ' ' + tech)
-                n.add("Link",name=bus + ' ' + tech,
-                      bus0=f"{bus} gas",bus1=bus,
-                      p_nom=Value/0.61 if tech =='CCGT' else Value/0.40,
-                      carrier=tech,
-                      efficiency=0.61 if tech =='CCGT' else 0.40,
-                      p_nom_extendable=True,
-                      capital_cost=g.capital_cost[0]*0.61 if tech =='CCGT' \
-                          else g.capital_cost[0]*0.40,
-                      marginal_cost=4.4*0.61 if tech=='CCGT' \
-                      else 4.5*0.40)
+                g = n.generators.loc[(n.generators.bus == bus) & (n.generators.carrier == tech)]
+                n.remove('Generator', bus + ' ' + tech)
+    
+                if tech == 'CCGT':
+                    # CCGT link has heat output
+                    n.add("Link", name=bus + ' ' + tech,
+                          bus0=f"{bus} gas",
+                          bus1=bus,
+                          bus2=f"{bus} heat",
+                          p_nom=Value / (0.61 + 0.3),
+                          carrier=tech,
+                          efficiency=0.61,
+                          efficiency2=0.3,
+                          p_nom_extendable=True,
+                          capital_cost=g.capital_cost.iloc[0] * (0.61 + 0.3),
+                          marginal_cost=4.4 * (0.61 + 0.3))
+                else:
+                    # OCGT link (no heat output)
+                    n.add("Link", name=bus + ' ' + tech,
+                          bus0=f"{bus} gas",
+                          bus1=bus,
+                          p_nom=Value / 0.40,
+                          carrier=tech,
+                          efficiency=0.40,
+                          p_nom_extendable=True,
+                          capital_cost=g.capital_cost.iloc[0] * 0.40,
+                          marginal_cost=4.5 * 0.40)
+    
             except:
-                n.add("Link",name=bus + ' ' + tech,
-                      bus0=f"{bus} gas",bus1=bus,
-                      p_nom=Value/0.61 if tech =='CCGT' else Value/0.40,
-                      carrier=tech,
-                      efficiency=0.61 if tech =='CCGT' else 0.40,
-                      p_nom_extendable=True,
-                      capital_cost=94469*0.61 if tech =='CCGT' \
-                          else 42234.56*0.40,
-                      marginal_cost=4.4*0.61 if tech=='CCGT' \
-                      else 4.5*0.40)
-            
+                if tech == 'CCGT':
+                    n.add("Link", name=bus + ' ' + tech,
+                          bus0=f"{bus} gas",
+                          bus1=bus,
+                          bus2=f"{bus} heat",
+                          p_nom=Value / (0.61 + 0.3),
+                          carrier=tech,
+                          efficiency=0.61,
+                          efficiency2=0.3,
+                          p_nom_extendable=True,
+                          capital_cost=94469 * (0.61 + 0.3),
+                          marginal_cost=4.4 * (0.61 + 0.3))
+                else:
+                    n.add("Link", name=bus + ' ' + tech,
+                          bus0=f"{bus} gas",
+                          bus1=bus,
+                          p_nom=Value / 0.40,
+                          carrier=tech,
+                          efficiency=0.40,
+                          p_nom_extendable=True,
+                          capital_cost=42234.56 * 0.40,
+                          marginal_cost=4.5 * 0.40)
+    
+
+##########################################################            
 
 
     for i in n.generators.index:
