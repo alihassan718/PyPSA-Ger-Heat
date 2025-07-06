@@ -147,7 +147,6 @@ def remove_expired_biomass_boilers(n, year, removal_biomass_df):
             old_p_nom = n.links.at[link_name, "p_nom"]
             new_p_nom = max(0, old_p_nom - row["p_nom"])
             n.links.at[link_name, "p_nom"] = new_p_nom
-            # 🐦🐦🐦 shouldn't p_nom be added to p_nom_max of extentdable? which is deleted 
             print(f"[{year}] Removed {row['p_nom']} MW from {link_name} (new p_nom = {new_p_nom})")
 
     return n
@@ -166,6 +165,17 @@ def add_gas_boilers(n, heat_demand_df, fuel_cost, gas_addition_df, discount_rate
     }
     
     gas_annuity = discount_rate / (1 - 1 / (1 + discount_rate)**gas["lifetime"])
+    
+    # Ensure 'oil' carrier exists and has a CO₂ emissions value
+    if 'gas' in n.carriers.index:
+        gas_emissions = n.carriers.at['gas', 'co2_emissions']
+    else:
+        raise ValueError("'gas' carrier not found in network.carriers")
+     
+     # Add 'oil_boiler' carrier with the same CO₂ emissions
+    if 'gas_boiler' not in n.carriers.index:
+        n.add("Carrier", "gas_boiler", co2_emissions=gas_emissions)
+    
     
     for bus in heat_demand_df.columns:
         heat_bus = f"{bus} heat"
@@ -353,59 +363,6 @@ def remove_expired_oil_boilers(n, year, removal_oil_df):
     return n
     
     
-    
-# def add_heat_pumps(n, heat_demand_df, heatpump_addition_df, discount_rate=0.07):
-#     """
-#     Adds heat pump links to the network with base p_nom from heatpump_addition_df.
-
-#     Parameters
-#     ----------
-#     n : pypsa.Network
-#         The PyPSA network object.
-#     heat_demand_df : pd.DataFrame
-#         DataFrame containing hourly heat demand with bus names as columns.
-#     heatpump_addition_df : pd.DataFrame
-#         DataFrame with columns ['bus', 'carrier', 'p_nom'] containing initial capacities.
-#     discount_rate : float
-#         Discount rate used for capital cost annuity calculation.
-#     """
-
-#     hp = {
-#         "tech": "heat_pump",
-#         "cop": 3.0,
-#         "capex": 800,
-#         "fom": 0.02,
-#         "vom": 0,
-#         "lifetime": 20
-#     }
-
-
-#     hp_annuity = discount_rate / (1 - 1 / (1 + discount_rate)**hp["lifetime"])
-
-#     for bus in heat_demand_df.columns:
-#         heat_bus = f"{bus} heat"
-#         hp_link = f"{bus} {hp['tech']}"
-
-#         # Step 1: Get p_nom from heatpump_addition_df
-#         bus_key = f"{bus} heat_pump"
-#         if bus_key in heatpump_addition_df.index:
-#             p_nom = heatpump_addition_df.loc[bus_key, "p_nom"]
-#         else:
-#             p_nom = 0
-
-#         # Step 2: Add the link if not already added
-#         if hp_link not in n.links.index:
-#             capital_cost = hp["capex"] * hp_annuity + hp["capex"] * hp["fom"]
-#             n.add("Link",
-#                   name=hp_link,
-#                   bus0=bus,            # AC bus
-#                   bus1=heat_bus,       # Heat bus
-#                   efficiency=hp["cop"],
-#                   p_nom=p_nom,
-#                   p_nom_extendable=True,
-#                   capital_cost=capital_cost,
-#                   marginal_cost=hp["vom"],
-#                   carrier="heat_pump")
 def add_heat_pumps(n, heat_demand_df, heatpump_addition_df, discount_rate=0.07):
     """
     Adds air-source and ground-source heat pump links to the network using base p_nom from heatpump_addition_df,
@@ -424,24 +381,24 @@ def add_heat_pumps(n, heat_demand_df, heatpump_addition_df, discount_rate=0.07):
     """
 # Adjusted ratios: 80% air-source, 20% ground-source
     heat_pumps = {
-        "air_source_heat_pump": {
+        "heat_pump": {
             "cop": 3.0,
             "capex": 2800,
             "fom": 0.02,
             "vom": 80.0,
             "lifetime": 20,
-            "national_potential_MW": 16000,   # 80% of 20 GW
-            "annual_potential_MW": 1120       # 80% of 1400 MW/year
+            "national_potential_MW": 40000,   # 80% of 50 GW
+            "annual_potential_MW": 2000       # 80% of 1400 MW/year
         },
-        "ground_source_heat_pump": {
-            "cop": 4.0,
-            "capex": 3600,
-            "fom": 0.02,
-            "vom": 80.0,
-            "lifetime": 25,
-            "national_potential_MW": 4000,    # 20% of 20 GW
-            "annual_potential_MW": 280        # 20% of 1400 MW/year
-        }
+        # "ground_source_heat_pump": {
+        #     "cop": 4.0,
+        #     "capex": 3600,
+        #     "fom": 0.02,
+        #     "vom": 80.0,
+        #     "lifetime": 25,
+        #     "national_potential_MW": 10000,    # 20% of 50 GW
+        #     "annual_potential_MW": 500 #280        # 20% of 1400 MW/year
+        # }
     }
 
     # Calculate total regional demand
@@ -458,10 +415,7 @@ def add_heat_pumps(n, heat_demand_df, heatpump_addition_df, discount_rate=0.07):
             annuity = discount_rate / (1 - 1 / (1 + discount_rate)**params["lifetime"])
             capital_cost = params["capex"] * annuity + params["capex"] * params["fom"]
 
-            # Base capacity
-            bus_key = f"{bus} {hp_type}"
-            p_nom = heatpump_addition_df.loc[bus_key, "p_nom"] if bus_key in heatpump_addition_df.index else 0
-
+            
             # Regional and yearly caps
             demand_share = regional_heat_demand[bus] / total_heat_demand
             regional_cap = params["national_potential_MW"] * demand_share
@@ -469,6 +423,7 @@ def add_heat_pumps(n, heat_demand_df, heatpump_addition_df, discount_rate=0.07):
 
             # Final max installable capacity
             p_nom_max = round(min(regional_cap, yearly_cap), 2)
+            # p_nom_max = params["annual_potential_MW"]
 
             if hp_link not in n.links.index:
                 n.add("Link",
@@ -476,108 +431,81 @@ def add_heat_pumps(n, heat_demand_df, heatpump_addition_df, discount_rate=0.07):
                       bus0=bus,
                       bus1=heat_bus,
                       efficiency=params["cop"],
-                      p_nom=p_nom,
+                      p_nom=0,
                       p_nom_max=p_nom_max,
                       p_nom_extendable=True,
                       capital_cost=capital_cost,
                       marginal_cost=params["vom"],
                       carrier=hp_type)
-    # # Define both heat pump types
-    # heat_pumps = {
-    #     "air_source_heat_pump": {
-    #         "cop": 3.0,
-    #         "capex": 2800,
-    #         "fom": 0.02,
-    #         "vom": 80.0,
-    #         "lifetime": 20,
-    #         "max_multiplier": 5  # max 3x of base
-    #     },
-    #     "ground_source_heat_pump": {
-    #         "cop": 4.0,
-    #         "capex": 3600,
-    #         "fom": 0.02,
-    #         "vom": 80.0,
-    #         "lifetime": 25,
-    #         "max_multiplier": 3  # more constrained
-    #     }
-    # }
-    # max_gshp_capacity=8000
-    
-    # for bus in heat_demand_df.columns:
-    #     heat_bus = f"{bus} heat"
+                
+            # Add fixed heat pump link (non-extendable, preserves initial p_nom)
+            fixed_hp_link = f"{bus} fixed_{hp_type}"
+            # Base capacity
+            bus_key = f"{bus} {hp_type}"
+            fixed_p_nom = heatpump_addition_df.loc[bus_key, "p_nom"] if bus_key in heatpump_addition_df.index else 0
 
-    #     for hp_type, params in heat_pumps.items():
-    #         hp_link = f"{bus} {hp_type}"
+            if fixed_hp_link not in n.links.index:
+            
+                n.add("Link",
+                      name=fixed_hp_link,
+                      bus0=bus,              
+                      bus1=heat_bus,         
+                      efficiency=params["cop"],
+                      p_nom=fixed_p_nom,
+                      p_nom_extendable=False,
+                      capital_cost=0,
+                      marginal_cost=0,
+                      carrier="heat")
 
-    #         # Get annuity and capital cost
-    #         annuity = discount_rate / (1 - 1 / (1 + discount_rate)**params["lifetime"])
-    #         capital_cost = params["capex"] * annuity + params["capex"] * params["fom"]
-
-    #         # Lookup base p_nom
-    #         bus_key = f"{bus} {hp_type}"
-    #         if bus_key in heatpump_addition_df.index:
-    #             p_nom = heatpump_addition_df.loc[bus_key, "p_nom"]
-    #         else:
-    #             p_nom = 0
-
-    #         p_nom_max = round(min(p_nom * params["max_multiplier"], max_gshp_capacity), 2)
-    #         # p_nom_max = round(p_nom * params["max_multiplier"], 2)
-
-    #         if hp_link not in n.links.index:
-    #             n.add("Link",
-    #                   name=hp_link,
-    #                   bus0=bus,              # From electricity bus
-    #                   bus1=heat_bus,         # To heat bus
-    #                   efficiency=params["cop"],
-    #                   p_nom=p_nom,
-    #                   p_nom_max=p_nom_max,
-    #                   p_nom_extendable=True,
-    #                   capital_cost=capital_cost,
-    #                   marginal_cost=params["vom"],
-    #                   carrier=hp_type)
-
-def remove_expired_heatpumps(n, year, removal_hp_df):
+def update_fixed_heat_pumps(n):
     """
-    Removes expired air- and ground-source heat pump capacities from the network
-    and updates p_nom and p_nom_max so the model can rebuild the removed capacity if needed.
-
-    Parameters
-    ----------
-    n : pypsa.Network
-        The PyPSA network object.
-
-    year : int
-        The simulation year (e.g., 2025).
-
-    removal_hp_df : pd.DataFrame
-        DataFrame with columns: 'bus', 'carrier', 'p_nom', 'year_removed'.
-
-    Returns
-    -------
-    n : pypsa.Network
-        Updated network with expired heat pump capacities removed.
+    Moves optimized heat pump capacity to the fixed heat pump links.
     """
-    expired = removal_hp_df[removal_hp_df["year_removed"] == year]
-
-    for _, row in expired.iterrows():
-        tech = row["carrier"]  # carrier is either 'air_source_heat_pump' or 'ground_source_heat_pump'
-        link_name = f"{row['bus']} {tech}"
-
-        if link_name in n.links.index:
-            old_p_nom = n.links.at[link_name, "p_nom"]
-            new_p_nom = max(0, old_p_nom - row["p_nom"])
-            n.links.at[link_name, "p_nom"] = new_p_nom
-
-            # Update or initialize p_nom_max
-            if "p_nom_max" in n.links.columns:
-                n.links.at[link_name, "p_nom_max"] = n.links.at[link_name, "p_nom_max"] + row["p_nom"]
+    for link in n.links.index:
+        if "heat_pump" in link and "fixed" not in link:
+            if "air_source_heat_pump" in link:
+                fixed_link = link.replace("air_source_heat_pump", "fixed_air_source_heat_pump")
+            elif "ground_source_heat_pump" in link:
+                fixed_link = link.replace("ground_source_heat_pump", "fixed_ground_source_heat_pump")
             else:
-                n.links["p_nom_max"] = n.links["p_nom"]
-                n.links.at[link_name, "p_nom_max"] = new_p_nom + row["p_nom"]
+                fixed_link = link.replace("heat_pump", "fixed_heat_pump")
 
-            print(f"[{year}] Removed {row['p_nom']} MW from {link_name} (new p_nom = {new_p_nom}, p_nom_max += {row['p_nom']})")
-
+            if fixed_link in n.links.index:
+                added = n.links.at[link, "p_nom_opt"]
+                n.links.at[fixed_link, "p_nom"] += added
+                n.links.at[link, "p_nom"] = 0
     return n
+
+
+def remove_expired_heat_pumps(n, removal_hp_df, year):
+ """
+ Removes expired heat pump capacities and adds the amount to p_nom_max for possible reinvestment.
+ """
+ expired = removal_hp_df[removal_hp_df["year_removed"] == year]
+
+ for _, row in expired.iterrows():
+     tech = row["carrier"]  # 'air_source_heat_pump' or 'ground_source_heat_pump'
+     link_name = f"{row['bus']} {tech}"
+
+     if link_name not in n.links.index:
+         continue
+
+     # Remove expired capacity
+     current_p_nom = n.links.at[link_name, "p_nom"]
+     removal = row["p_nom"]
+     new_p_nom = max(0, current_p_nom - removal)
+     n.links.at[link_name, "p_nom"] = new_p_nom
+
+     # Ensure p_nom_max exists and update it
+     if "p_nom_max" not in n.links.columns:
+         n.links["p_nom_max"] = n.links["p_nom"]
+
+     n.links.at[link_name, "p_nom_max"] += removal
+
+     print(f"[{year}] Removed {removal} MW from {link_name} (new p_nom = {new_p_nom}, p_nom_max += {removal})")
+
+ return n
+
 
 def add_solar_thermal(n, heat_demand_df, solar_addition_df, discount_rate=0.07):
     """
@@ -621,17 +549,16 @@ def add_solar_thermal(n, heat_demand_df, solar_addition_df, discount_rate=0.07):
             n.add("Store",
                   name=f"{bus} solar_thermal_store",
                   bus=solar_bus,
-                  e_nom=1e6,  # very large value
-                  e_nom_extendable=False,
+                  e_nom=1e8,  # very large value
+                  e_nom_extendable=True,
                   marginal_cost=0.0,
                   carrier="solar_thermal")
 
-        # Get installed capacity from data
-        bus_key = f"{bus} solar_thermal"
-        p_nom = solar_addition_df.loc[bus_key, "p_nom"] if bus_key in solar_addition_df.index else 0
+        
 
         # Max capacity per regional bus (based on FLH)
-        p_nom_max = round((max_full_load_hours / 8760) * 1e3, 2)
+        # p_nom_max = round((max_full_load_hours / 8760) * 1e3, 2)
+        p_nom_max = 15000
 
         # Add link from solar thermal source to heat bus
         if link_name not in n.links.index:
@@ -640,16 +567,50 @@ def add_solar_thermal(n, heat_demand_df, solar_addition_df, discount_rate=0.07):
                   bus0=solar_bus,
                   bus1=heat_bus,
                   efficiency=efficiency,
-                  p_nom=p_nom,
-                  p_nom_max=p_nom_max,
+                  p_nom=0,
+                   p_nom_max=p_nom_max,
                   p_nom_extendable=True,
                   capital_cost=capital_cost,
                   marginal_cost=vom,
                   carrier="solar_thermal")
+            # Add fixed solar thermal link
+        fixed_link = f"{bus} fixed_solar_thermal"
+        main_link = f"{bus} solar_thermal"
+        # Get installed capacity from data
+        bus_key = f"{bus} solar_thermal"
+        fixed_p_nom = solar_addition_df.loc[bus_key, "p_nom"] if bus_key in solar_addition_df.index else 0
+        
+        if fixed_link not in n.links.index:
+        
+            n.add("Link",
+                  name=fixed_link,
+                  bus0=solar_bus,        # From solar source bus
+                  bus1=heat_bus,         # To heat bus
+                  efficiency=efficiency,
+                  p_nom=fixed_p_nom,
+                  p_nom_extendable=False,
+                  capital_cost=0,
+                  marginal_cost=0,
+                  carrier="heat")
 
     return "Solar thermal source buses, stores, and links added to network."
 
-def remove_expired_solar_thermal(n, year, removal_df):
+def update_fixed_solar_thermal(n):
+    """
+    Moves optimized solar thermal capacity to the fixed solar thermal link.
+    """
+    for link in n.links.index:
+        if "solar_thermal" in link and "fixed" not in link:
+            fixed_link = link.replace("solar_thermal", "fixed_solar_thermal")
+
+            if link in n.links.index and fixed_link in n.links.index:
+                added = n.links.at[link, "p_nom_opt"]
+                n.links.at[fixed_link, "p_nom"] += added
+                n.links.at[link, "p_nom"] = 0
+    return n
+
+
+def remove_expired_solar_thermal(n, year, removal_solar_thermal_df):
     """
     Removes expired solar thermal units from the PyPSA network for a given year.
 
@@ -663,14 +624,24 @@ def remove_expired_solar_thermal(n, year, removal_df):
         DataFrame containing ['year_removed', 'carrier', 'p_nom', 'bus'].
     """
     # Filter for expired solar thermal units in the given year
-    expired = removal_df[(removal_df["carrier"] == "solar_thermal") & (removal_df["year_removed"] == year)]
+    expired = removal_solar_thermal_df[(removal_solar_thermal_df["carrier"] == "solar_thermal") & (removal_solar_thermal_df["year_removed"] == year)]
 
     for _, row in expired.iterrows():
         link_name = f"{row['bus']} {row['carrier']}"
 
-        if link_name in n.links.index:
-            current_capacity = n.links.at[link_name, "p_nom"]
-            new_capacity = max(current_capacity - row["p_nom"], 0)
-            n.links.at[link_name, "p_nom"] = new_capacity
+    if link_name in n.links.index:
+      current_capacity = n.links.at[link_name, "p_nom"]
+      removal = row["p_nom"]
+      
+      # Subtract from installed capacity
+      new_capacity = max(current_capacity - removal, 0)
+      n.links.at[link_name, "p_nom"] = new_capacity
+  
+      # Add removed amount to max capacity (if extendable)
+      if "p_nom_max" in n.links.columns:
+          current_max = n.links.at[link_name, "p_nom_max"]
+          new_max = current_max + removal
+          n.links.at[link_name, "p_nom_max"] = new_max
+
 
     return f"Expired solar thermal units removed for {year}."

@@ -417,12 +417,26 @@ def Yearly_potential(n,saved_potential,regional_potential,agg_p_nom_minmax):
     for i in n.generators.index[n.generators.p_nom_extendable==False]:
         n.generators.loc[i,'p_nom_max'] = 0 if n.generators.loc[i,'p_nom_max']<0 else  n.generators.loc[i,'p_nom_max']
 
+    # for i in n.links.index:
+    #     if n.links.loc[i,'carrier'] in ['CCGT','OCGT']:
+    #         condition = n.links.loc[i,'p_nom'] > n.links.loc[i,'p_nom_opt']
+    #         val = n.links.loc[i,'p_nom'] if condition else n.links.loc[i,'p_nom_opt']
+    #         eff=n.links.loc[i,'efficiency']
+    #         n.links.loc[i,'p_nom_max']=val+ regional_potential/eff
     for i in n.links.index:
         if n.links.loc[i,'carrier'] in ['CCGT','OCGT']:
+            is_heat_output = "heat" in str(n.links.loc[i, 'bus2'])  # new condition
             condition = n.links.loc[i,'p_nom'] > n.links.loc[i,'p_nom_opt']
             val = n.links.loc[i,'p_nom'] if condition else n.links.loc[i,'p_nom_opt']
-            eff=n.links.loc[i,'efficiency']
-            n.links.loc[i,'p_nom_max']=val+ regional_potential/eff
+            eff = n.links.loc[i,'efficiency']
+    
+            if is_heat_output:
+                # Optional: apply different regional potential for heat supply
+                n.links.loc[i,'p_nom_max'] = val + regional_potential / eff
+            else:
+                # keep original behavior for electricity-only
+                n.links.loc[i,'p_nom_max'] = val + regional_potential / eff
+
     for i in n.storage_units.index[
             n.storage_units.p_nom_extendable==True]:
         l_b=len(n.buses[n.buses.carrier=='AC'])

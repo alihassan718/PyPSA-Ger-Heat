@@ -531,7 +531,7 @@ def pie_chart_heat_capacity(n, year, clusters, colors):
     heating_links_df = n.links.loc[heating_links].copy()
 
     # Extract technology from link names (assuming tech is last word)
-    heating_links_df["tech"] = heating_links_df.index.str.split().str[-1].str.replace("_", " ")
+    heating_links_df["tech"] = heating_links_df.index.str.replace("fixed_", "", regex=False).str.split().str[-1].str.replace("_", " ")
 
     # Aggregate installed capacity by tech
     p_by_tech = heating_links_df.groupby("tech")["p_nom"].sum()
@@ -590,7 +590,9 @@ def plot_heating_supply_shares(n, year, clusters, colors):
 
     for link in heating_links:
         # Extract tech name (assumed to be the last word)
-        tech = link.split()[-1].replace("_", " ")
+        tech = link.replace("fixed_", "").split()[-1]
+        tech = link.split()[-1].replace("_", " ").replace("fixed", "").strip()
+
 
         if "bus1" in n.links.columns and "heat" in n.links.at[link, "bus1"]:
             power = -n.links_t.p1[link].sum()

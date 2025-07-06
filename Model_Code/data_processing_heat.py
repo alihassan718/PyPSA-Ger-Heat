@@ -2,7 +2,7 @@
 
 import pandas as pd
 import numpy as np
-
+#%%
 def create_dummy_burners():
         
     
@@ -389,7 +389,7 @@ def dummy_solar_thermal():
     share_projection = pd.Series(index=years, dtype=float)
 
     # Set known targets
-    share_projection[2020] = 0.01
+    share_projection[2020] = 0.005
     share_projection[2050] = 0.10
 
     # Interpolate missing years
@@ -459,10 +459,13 @@ def solar_thermal_addition_and_removal():
     remove.to_csv(removal_path)
 
     # Create and save addition file
-    correct = remove.groupby(['carrier', 'bus']).agg({'p_nom': ['sum']})
-    correct = correct.stack().reset_index()
-    correct = correct[['carrier', 'p_nom', 'bus']]
-    correct.index = correct.bus + ' ' + correct.carrier
+    base_year = 2020
+    correct = data[data["year_added"] == base_year].groupby(['carrier', 'bus']).agg({'p_nom': 'sum'}).reset_index()
+
+    # correct = remove.groupby(['carrier', 'bus']).agg({'p_nom': ['sum']})
+    # correct = correct.stack().reset_index()
+    # correct = correct[['carrier', 'p_nom', 'bus']]
+    # correct.index = correct.bus + ' ' + correct.carrier
     addition_path = "D:/project_h2/Networks/elec_s_4_ec_lcopt_Co2L-1H-Ep-CCL/solar_thermal_basic_addition_heat.csv"
     correct.to_csv(addition_path)
 

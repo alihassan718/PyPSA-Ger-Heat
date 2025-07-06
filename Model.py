@@ -310,6 +310,8 @@ def main():
     
     #####################################################################################################
     hs.update_fixed_biomass_boilers(n)
+    hs.update_fixed_heat_pumps(n)
+    hs.update_fixed_solar_thermal(n)
 
     #to track the yearly potential heating technologies same as above:
     # Potentials_over_years_heat = pd.DataFrame({"2020": saved_potential_heat})
@@ -318,7 +320,7 @@ def main():
     #####################################################################################################
 
     # ✅✅✅✅✅✅✅✅✅
-    for i in range(2021, 2035):
+    for i in range(2021, 2022):
 
         # Update lines, gens, store
         df_H2 = mp.update_const_lines(n, i, df_H2)
@@ -409,8 +411,10 @@ def main():
         
         ###############################################################################################
  
-        # shift p_nom_opt of biomass boiler to fixed_biomass boiler
+        # shift p_nom_opt of heating links to fixed heating links
         hs.update_fixed_biomass_boilers(n)
+        hs.update_fixed_heat_pumps(n)
+        hs.update_fixed_solar_thermal(n)
         # remove expired ones
         hs.remove_expired_biomass_boilers(n, year=i, removal_biomass_df=removal_biomass_df)
         hs.remove_expired_gas_boilers(n, year=i, removal_gas_df=removal_gas_df)
