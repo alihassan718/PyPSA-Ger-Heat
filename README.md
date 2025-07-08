@@ -8,7 +8,7 @@ MyPyPSA-Ger was developed by [Anas Abuzayed] (https://de.linkedin.com/in/anas-ab
 
 The model is described in the paper [MyPyPSA-Ger: Introducing CO2 taxes on a multi-regional myopic roadmap of the German electricity system towards achieving the 1.5 °C target by 2050](https://www.sciencedirect.com/science/article/pii/S0306261922000587), and has been used in several other publications. A YouTube course explaining basics of energy system analysis in Python is available [here] (https://www.youtube.com/playlist?list=PLa98mykrHEG8MlH5hCSlB_Dpaje_m5wSY). The course material will be made publicly available soon.
 
-## The German Heating Sector for residential and industrial heating is added by Ali Hassan as his master's thesis unders the supervision of [Anna Sandhaas] (https://github.com/asandhaa) and Prof. Niklas Hartmann (niklas.hartmann@hs-offenburg.de , Hochschule Offenburg).
+## The model was working for German Electricity Sector. The German Heating Sector for residential and industrial heating is added by Ali Hassan under the supervision of [Anna Sandhaas] (https://github.com/asandhaa) (anna.sandhaas@hs-offenburg.de) and Prof. Niklas Hartmann (niklas.hartmann@hs-offenburg.de , Hochschule Offenburg).
 
 
 
