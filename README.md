@@ -8,40 +8,18 @@ MyPyPSA-Ger was developed by [Anas Abuzayed] (https://de.linkedin.com/in/anas-ab
 
 The model is described in the paper [MyPyPSA-Ger: Introducing CO2 taxes on a multi-regional myopic roadmap of the German electricity system towards achieving the 1.5 °C target by 2050](https://www.sciencedirect.com/science/article/pii/S0306261922000587), and has been used in several other publications. A YouTube course explaining basics of energy system analysis in Python is available [here] (https://www.youtube.com/playlist?list=PLa98mykrHEG8MlH5hCSlB_Dpaje_m5wSY). The course material will be made publicly available soon.
 
+## The German Heating Sector for residential and industrial heating is added by Ali Hassan as his master's thesis unders the supervision of [Anna Sandhaas] (https://github.com/asandhaa) and Prof. Niklas Hartmann (Hochschule Offenburg).
+
 
 
 
 # Installation 
 
 ## Clone the Repository 
-
-/some/other/path % cd /some/path/without/spaces
-
-/some/path/without/spaces % git clone https://github.com/AnasAbuzayed/MyPyPSA-Ger.git
-
-
 ## Install the Library
-
 % cd MyPyPSA-Ger
 
 % conda create --name MyPyPSA-Ger --file req.txt
-
-## Use the Model
-### 1. To use the model, simply run the Model.py script. The basic network topology is from [PyPSA-Eur](https://github.com/PyPSA/pypsa-eur) and are stored in the repository.
-
-### 2. To create the base network, clone into the pypsa-eur folder and create a network using the workflow management system "snakemake". For more details about how it works refer to the PyPSA-Eur documentation [here](https://pypsa-eur.readthedocs.io/en/latest/tutorial.html). The following code gives an example how to create the base network. The Model is tested with PyPSA version 22.1. Thanks to the flexibility of PyPSA and MyPyPSA-Ger, the model should work fine with any PyPSA version, unless major functionality depreciation from PyPSA took place.
-
-![image](https://user-images.githubusercontent.com/60949903/178725004-1464261c-2a74-49a5-abeb-fba698463fef.png)
-
-% conda activate MyPyPSA-Ger
-
-### 3. Run MyPyPSA-Ger model
-
-% python Model.py
-
-% enter clusters
-
-% 4
 
 ## The results of this model will be saved in a folder within the main repository following the length of its clusters.
 
